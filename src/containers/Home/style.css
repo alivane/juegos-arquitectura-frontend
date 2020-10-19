@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.t2 {
+       background-color:rgba(255, 255, 255, 0.2);
+       align-items: center;
+       width: auto;
+       border-top: 5px solid #343537;
+       border-bottom: 5px solid #343537;
+       border-right: 5px solid #343537;
+       border-left: 5px solid #343537;
+       box-shadow: 2px 2px 10px #00B0FA;
+       border-radius: 10px;  
+       text-align: center;
+       box-sizing: border-box;
+       padding:10px 20px;  
+       height: 60%;
+       margin: auto;
+
+ 
+      } 
+    
+ .header {
+       margin-top:30px;
+       margin-bottom: 30px;
+       text-align: center;
+      }
+
+.head {
+        display: inline;
+        color: white;
+        font-family: 'Press Start 2P';
+        -webkit-text-stroke: 2px #00B0FA;
+        font-size: 65px;
+
+       }
+
+ .head2 {
+        display: inline;
+        color:red;
+        font-family: 'Press Start 2P';
+        -webkit-text-stroke: 2px #00B0FA;
+        font-size: 65px;  
+        }
+
+ .head3 {
+        display: inline;
+        color: yellow;
+        font-family: 'Press Start 2P';
+        -webkit-text-stroke: 2px #00B0FA;
+        font-size: 65px;
+        }
+
+ .head4 {
+        display: inline;
+        color:blue;
+        font-family: 'Press Start 2P';
+        font-size: 65px;
+        -webkit-text-stroke: 2px #00B0FA;
+        }
+
+ .head5 {
+        display: inline;
+        color:#9100A9;
+        font-family: 'Press Start 2P';
+        font-size: 65px;
+        -webkit-text-stroke: 2px #00B0FA;
+
+        }
+
+ .head6 {
+        display: inline;
+        color:lime;
+        font-family: 'Press Start 2P';
+        font-size: 65px;
+        -webkit-text-stroke: 2px #00B0FA;
+        margin-right: -10px;
+
+        }
+
+ .head7 {
+        display: inline;
+        color:#FF7A00;
+        font-family: 'Press Start 2P';
+        -webkit-text-stroke: 2px #00B0FA;
+        font-size: 65px;
+        margin-left: 5px;
+
+
+  }
+
+ .head8 {
+          display: inline;
+          color:#FF00B8;
+          font-family: 'Press Start 2P';
+          -webkit-text-stroke: 2px #00B0FA;
+          font-size: 65px;
+
+  }
+
+ .head9 {
+          display: inline;
+          color:#343537;
+          font-family: 'Press Start 2P';
+          -webkit-text-stroke: 2px #00B0FA;
+          font-size: 65px;
+        }
+
+
+.helog{
+       margin-top: 20px;
+}
+
+ .b1 {
+      background: linear-gradient(45deg, #CCFF00 30%, #FF8E53 90%); 
+      border: 0;
+      border-radius: 10px;
+      color: white;
+      width: auto;
+      box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+      text-decoration: none;   
+      font-family: 'Press Start 2P';
+     }
+
+@media only screen and (max-width: 830px ){
+       .head{
+              font-size: 40px;
+       }
+       .head2{
+              font-size: 40px;
+
+       } .head3{
+              font-size: 40px;
+  
+       } .head4{
+              font-size: 40px;
+ 
+       } .head5{
+              font-size: 40px;
+
+       } .head6{
+              font-size: 40px;
+  
+       } .head7{
+              font-size: 40px;
+  
+       } .head8{
+              font-size: 40px;
+  
+       } .head9{
+              font-size: 40px;
+ 
+       }
+
+}
+
+@media only screen and (max-width: 570px ){
+         
+        .header{
+              margin-top:10px;
+              margin-bottom: 10px;
+              text-align: center;
+
+        }     
+       }
+       
+@media only screen and (max-width: 460px ){
+
+        .header{
+               margin-bottom: 200px;
+        }       
+
+         
+          
+       }
+      
+@media only screen and (max-width: 340px ){
+                  
+       }
+       
+
+@media only screen and (max-width: 240px ){
+             
+       
+       
+           .butl{
+              width: 80%;
+              margin: auto;
+              margin-bottom: 10px;
+              margin-top: 20px;
+                            
+                     }
+       .butloginl{
+                
+                  font-weight: 900;
+                  font-size: auto;       
+                     }
+       }
+       
+
+

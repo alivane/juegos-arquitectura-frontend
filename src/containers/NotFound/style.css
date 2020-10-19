@@ -1,0 +1,177 @@
+
+.container_notfound{
+    text-align: center;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    max-width: 90%;
+    padding: 2em 3em;
+   
+}
+
+#tsparticles_notfound{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://allegra.flowersetcfresno.com/pic/1015789_full-fondo-de-pantalla-negro-3840x2160-3840x2160-black-and-blue-abstract-4k-wallpaper-free-4k-wallpaper.jpg);
+    background-size: 100vw 100vh;
+}
+.posihome{
+    width: auto;
+    flex-wrap: wrap;
+
+}
+.e1{
+    color:purple;
+    font-size: 40px;
+    font-weight: 700;
+    display: block;
+    animation-name: mohome;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+
+
+}
+.e2{
+    color:green;
+    font-size: 30px;
+    animation-name: mohome;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+
+
+}
+
+
+.img_notfound{
+    height: 150px;
+    width: 150px;
+    position: relative;
+    margin: auto;
+    margin-bottom: 20px;
+  
+ 
+}
+@keyframes mohome{
+    0% { color:cyan }
+    15%{color:yellow}
+    25%{color:yellowgreen}
+    35%{color:lime}
+    45%{color:red}
+    55%{}
+    65%{}
+    75%{}
+    85%{}
+    95%{ }
+    100% {color:blue}
+}
+
+.buthome{
+    animation-name: mohome;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    margin: auto;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size:30px;
+    display: block;
+}
+
+
+
+@media only screen and (max-width: 830px ){
+  
+    .img_notfound{
+    margin-bottom: 0px;
+    }
+  
+  
+    }
+
+@media only screen and (max-width: 670px ){
+
+ 
+   
+
+}
+
+@media only screen and (max-width:660px){
+   
+    }
+
+@media only screen and (max-width: 655px ){
+         
+   
+    .e1{
+        font-size: 30px;
+    }
+    .e2{
+        font-size: 20px;
+
+    }
+    .buthome{
+        font-size: 20px;
+    }
+    
+           }
+
+@media only screen and (max-width: 640px ){
+   
+   
+    .e1{
+        font-size: 40px;
+    }
+    .e2{
+        font-size: 30px;
+
+    }
+    .buthome{
+        font-size: 30px;
+    }
+    }   
+@media only screen and (max-width: 570px ){
+    
+    .e1{
+        font-size: 35px;
+    }
+    .e2{
+        font-size: 25px;
+    }
+    .buthome{
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 460px ){
+ 
+    .e1{
+        font-size: 40px;
+        margin-top: 20px;
+    }
+    .e2{
+        font-size: 30px;
+
+    }
+    .buthome{
+        font-size: 30px;
+    }
+    }
+
+@media only screen and (max-width: 280px ){
+
+    .e1{
+        font-size: 35px;
+    }
+    .e2{
+        font-size: 30px;
+    }
+    .buthome{
+        font-size: 30px;
+    }
+    }
+    
