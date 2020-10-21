@@ -12,7 +12,6 @@ export default function ProfileMen(){
 
     return(
 <>
-
 <div className={classes.bgprofile}>
 <div className="profile_container">
     <div className="profile_container__img_container">

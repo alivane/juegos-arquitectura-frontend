@@ -3,7 +3,9 @@ import {Button,Modal,ModalHeader,ModalBody,ModalFooter,FormGroup,Input,Label} fr
 import 'bootstrap/dist/css/bootstrap.css';
 import './prueba.css';
 import Timer from './timer';
+
 export default class  Prueba extends React.Component{
+
 state = {
     abierto: false,
 }
@@ -18,8 +20,18 @@ render(){
         <>
             <div className="principal">
                     <button className="bb1" onClick={this.abrirModal}>Mostrar Modal</button>
-            </div>|
+            </div> 
+            <div className="container_reloj"> 
+            <div className="reloj">
+            <img src="agujaMinutos.png" alt="" id="minutos"/>
+            <img src="agujaSegundos.png" alt="" id="segundos"/>
+            </div>
             <Timer/>
+            </div>
+            
+         
+        
+
             <Modal isOpen={this.state.abierto} className="modal-1">
                 <ModalHeader >
                     INICIAR SESION
