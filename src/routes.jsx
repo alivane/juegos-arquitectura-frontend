@@ -6,6 +6,8 @@ import NotFound from './pages/NotFound';
 import Prueba from './pages/Prueba2';
 import Profilewoman from './pages/Profilewoman';
 import Profilemen from './pages/Profiemen';
+import Nivel1 from './pages/Nivel1';
+
 export const routes = [
   {
     path: '/',
@@ -40,8 +42,11 @@ export const routes = [
     component: Profilemen
   },
   {
+    path: '/Nivel1',
+    component: Nivel1
+  },
+  {
     path:'*',
     component: NotFound
   },
- 
 ]

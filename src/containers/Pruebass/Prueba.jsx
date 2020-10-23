@@ -22,11 +22,11 @@ render(){
                     <button className="bb1" onClick={this.abrirModal}>Mostrar Modal</button>
             </div> 
             <div className="container_reloj"> 
-            <div className="reloj">
-            <img src="agujaMinutos.png" alt="" id="minutos"/>
-            <img src="agujaSegundos.png" alt="" id="segundos"/>
-            </div>
-            <Timer/>
+                <div className="reloj">
+                    <img src="agujaMinutos.png" alt="" id="minutos"/>
+                    <img src="agujaSegundos.png" alt="" id="segundos"/>
+                </div>
+                <Timer/>
             </div>
             
          
