@@ -1,21 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .container_register{
-       background-color:rgba(255, 255, 255, 0.2);
-      align-items: center;
-      width: 50%;
-      border-bottom: 5px solid blue;
-      border-right: 5px solid blueviolet;
-      border-top: 5px solid red;
-      border-left: 5px solid yellow;
-      margin:auto;
-      border-radius: 10px;  
-      box-shadow: 2px 2px 10px #666;
-      text-align: center;
-      box-sizing: border-box;
-      padding:10px 20px;
+       text-align: center;
+       position: absolute;
+       width: 40%;
+       right: 50%;
+       transform: translate(50%, 0%);
+       max-width: 90%;
+       padding: 2em 3em;
+       margin-top: 0px;
+       overflow: hidden;
+
      
 }
+#tsparticles_register {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       background-image: url(https://allegra.flowersetcfresno.com/pic/1015789_full-fondo-de-pantalla-negro-3840x2160-3840x2160-black-and-blue-abstract-4k-wallpaper-free-4k-wallpaper.jpg);
+       background-size:100vw 100vh;
+       overflow: hidden;
+       
+   }
 
 .container_title_register_word1 {
        margin-top:30px;
@@ -40,18 +46,21 @@
         display: inline;
         -webkit-text-stroke: 2px black;
         font-size: 50px;
+        letter-spacing: 2px;
 }
 
 
 .form_register__label
 {
        color:white;
+       font-weight: 900;
 }
 
 
 .form_register__container{
        margin-top: 5px;
        margin-bottom: 10px;
+       margin-bottom: 0px;
        
 }
 .form_register__container-icon{
@@ -70,9 +79,10 @@
 
 .form_register__a-register{
        background: linear-gradient(45deg, #CE0303 100%, #01FF94 0%);
-       box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+       box-shadow: 0 0px 5px 3px rgba(255, 105, 135, .3);
        border-radius: 10px;
-       width: 25%;
+       width: 35%;
+       display: block;
        margin: auto;
        margin-bottom: 10px;
        margin-top: 20px;
@@ -93,46 +103,12 @@
        -webkit-transform : scale(1.25);   /* Chrome - Safari */
        -o-transform : scale(1.25);        /* Opera */
        background: linear-gradient(45deg, #00FF38 100%, #CE0303 0%);
+       text-decoration: none;
        box-shadow: 0 3px 5px 2px white;
 }
 
-@media only screen and (max-width: 830px ){
-       .container_register{
-                     width: 70%;
-                     
-              }     
-       .container_title_register_word1 {
-                     margin-top:5px;
-                     margin-bottom: 5px;
-                     text-align: center;
-                    
-       }
-       .title_register_word1 {   
-              font-size: 38px;
-              margin-left: 0;
-             }
-         
-        
-       .form_register__label
-{
-              font-size: 18px;
-       }
-           .form_register__container-input {
-              padding-left: 30px;
-              height: 40px;
-           }
-           .form_register__container-icon{
-              transform: translate(25%,30%);
-             
-            }
-            .form_register__a-register{
-                   font-size: 25px;
-                   width: 30%;
 
-            }
-       }
-
-@media only screen and (max-width: 670px ){
+@media only screen and (max-width: 900px ){
 
        .container_register{
               width: 70%;
@@ -141,19 +117,18 @@
 .container_title_register_word1 {
               margin-top:5px;
               margin-bottom: 5px;
-              text-align: center;
              
 }
 
 .title_register_word1 {   
-font-size: 45px;
+font-size: 25px;
 margin-left: 0;
 }
 
 
 .form_register__label
 {
-       font-size: 15px;
+       font-size: 10px;
 }
     .form_register__container-input {
        padding-left: 30px;
@@ -164,165 +139,66 @@ margin-left: 0;
        transform: translate(25%,30%);
       
      }
+     .form_register__a-register{
+       font-size: 10px;
+       margin-top: 10px;
+       width: 20%;
+}
 }
 
-@media only screen and (max-width:660px){
-       .container_register{
-              width: 60%;
-       }    
-       
-       .title_register_word1 {   
-           font-size: 25px;
-           margin-left: 0;
-          }
-   
-      
-       .form_register__label
-{
-              font-size: 13px;
-       }
-           .form_register__container-input {
-              padding-left: 30px;
-              height: 26px;
-              width: 70%;
-              margin-bottom: 0px;
-           }
-           .form_register__container-icon{
-              transform: translate(25%,10%);
-             
-            }
-       .form_register__a-register{
-         font-size: 15px;
-         margin-top: 0px;
-         width: 40%;
-  }
-       }
 
-@media only screen and (max-width: 650px ){
+
+@media only screen and (max-width: 655px ){
               .container_register{
                             width: 70%;
                             
                      }     
               .container_title_register_word1 {
-                            margin-top:5px;
-                            margin-bottom: 5px;
                             text-align: center;
                            
               }
               
-              .title_register_word1 {   
-              font-size: 40px;
-              margin-left: 0;
-             }
-        
-         
-              .form_register__label
-{
-                     font-size: 15px;
-              }
+       
+
                   .form_register__container-input {
-                     padding-left: 30px;
-                     height: 40px;
-                     width:75%;
+                     padding-left: 20px;
+                     height: 25px;
+                     width:55%;
                   }
                   .form_register__container-icon{
                      transform: translate(25%,30%);
+                     transform: scale(0.7);
+                     margin-left: 2px;
                     
                    }
-                 
-               .form_register__a-register{
-                font-size: 23px;
-                }
               }
 
-@media only screen and (max-width: 570px ){
-       .container_register{
-              width: 70%;
-              
-       }   
-              .container_title_register_word1 {
-                     margin-top:auto;
-                     margin-bottom: auto;
-                     text-align: center;
-                    
-                    }
-       
-       .title_register_word1 {   
-           font-size: 30px;
-           margin-left: 0;
-          }
-      
-       .form_register__label
-{
-              font-size: 13px;
-       }
-           .form_register__container-input {
-              padding-left: 30px;
-              height: 30px;
-              width: 70%;
-           }
-           .form_register__container-icon{
-              transform: translate(25%,17%);
-             
-            }
-            
-       .form_register__a-register{
-         font-size: 19px;
-  }
-       }   
 
-@media only screen and (max-width: 460px ){
+@media only screen and (max-width: 500px ){
 
        .container_register{
               width: 90%;
+              top: 20%;
+              
               
        } 
        .container_title_register_word1 {
-              margin-top: 20px;
-              margin-bottom: 100px;
+              margin-top: 0px;
+              margin-bottom: 200px;    
        }
-      
        .form_register__a-register{
-              font-size: 18px;
-              margin-top: 40px;
-
-
+              width: 40%;
        }
-      
-   
        }
-
- @media only screen and (max-width: 340px ){
-           
-              
-       .title_register_word1 {   
-           font-size: 25px;
-           margin-left: 0;
-          }
-    
-         
-         
-       .form_register__a-register{
-                
-                  font-weight: 900;
-                  font-size: auto; 
-                  margin: auto;
-                  margin-bottom: 10px;
-                  margin-top: 20px;     
-                     }
-              }
-
- @media only screen and (max-width: 280px ){
+ @media only screen and (max-width: 320px ){
              
               
        .title_register_word1 {   
-           font-size: 25px;
-           margin-left: 0;
-          }
+           font-size: 18px;
+       }
+     
+      
        
-  
-         .form_register__a-register{
-                width: 505;
-         }
+
        }
        

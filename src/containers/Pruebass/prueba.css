@@ -1,5 +1,5 @@
 
-
+/*
 .bb1{
     margin:0;
     color:white;
@@ -26,60 +26,5 @@
     background-color: rgba(50,50,150,0.5);
 }
 
-.reloj {
-
-	padding: 20px;
-    background-image: url("./gis.jpg");
-	width: 150px;
-	height: 150px;
-	border-radius: 350px;
-	background-color: #ededed;
-	background-size: 100%;
-	border: 20px solid #555;
-	display: flex;
-    margin: auto;
-}
-
-.reloj img {
-	position: relative;
-	height: 70px;
-    transition: all 0.5s;
-}
-
-
-.reloj  #minutos   {
-    position: absolute;
-}
-.reloj #segundos {
-	position: absolute;
-	animation-name: r1;
-	animation-iteration-count: infinite;
-	animation-duration: 10s;
-	animation-timing-function: steps(3);
-}
-
-@keyframes r1{
-	0%{transform: rotate(30deg);}
-	10%{transform: rotate(60deg);}
-	20%{transform: rotate(90deg);}
-	30%{transform: rotate(120deg);}
-	40%{transform: rotate(150deg);}
-	50%{transform: rotate(180deg);}
-	60%{transform: rotate(210deg);}
-	70%{transform: rotate(240deg);}
-	80%{transform: rotate(270deg);}
-	90%{transform: rotate(300deg);}
-	95%{transform: rotate(330deg);}
-	98%{transform: rotate(360deg);}
-	100%{transform: rotate(360deg);}
-}
-
-.container_reloj{
-    border: 1px solid cyan;
-    display: flex;
-    padding: 10px 100px;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center; 
-}
+*/
 

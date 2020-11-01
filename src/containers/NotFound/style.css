@@ -1,14 +1,12 @@
 
 .container_notfound{
     text-align: center;
-    box-sizing: border-box;
     position: absolute;
     width: 100%;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
-    max-width: 90%;
-    padding: 2em 3em;
+  
+    
+
+    
    
 }
 
@@ -18,10 +16,12 @@
     height: 100%;
     background-image: url(https://allegra.flowersetcfresno.com/pic/1015789_full-fondo-de-pantalla-negro-3840x2160-3840x2160-black-and-blue-abstract-4k-wallpaper-free-4k-wallpaper.jpg);
     background-size: 100vw 100vh;
+    overflow: hidden;
+
+
 }
 .posihome{
     width: auto;
-    flex-wrap: wrap;
 
 }
 .e1{

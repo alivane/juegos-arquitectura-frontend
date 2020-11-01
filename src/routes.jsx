@@ -6,6 +6,8 @@ import NotFound from './pages/NotFound';
 import Prueba from './pages/Prueba2';
 import Profilewoman from './pages/Profilewoman';
 import Profilemen from './pages/Profiemen';
+import Game1 from './pages/Game1';
+import SelectionSex from './pages/SelectionSex'
 export const routes = [
   {
     path: '/',
@@ -38,6 +40,14 @@ export const routes = [
   {
     path: '/profilemen',
     component: Profilemen
+  },
+  {
+    path: '/game1',
+    component: Game1
+  },
+  {
+    path: '/selectionsex',
+    component: SelectionSex
   },
   {
     path:'*',

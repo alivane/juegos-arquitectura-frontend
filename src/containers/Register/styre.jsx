@@ -1,12 +1,12 @@
 import React from 'react';
 import Particles from "react-tsparticles";
 
-export default class Stylesre extends React.Component {
+export default class Styleslo extends React.Component {
   render() {
     return (
      
       <Particles
-        id="tsparticles_login"
+        id="tsparticles_register"
         options={{
          
           fpsLimit: 60,
