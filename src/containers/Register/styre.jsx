@@ -55,7 +55,7 @@ export default class Styleslo extends React.Component {
               direction: "none",
               enable: true,
               outMode: "bounce",
-              random: false,
+              random: true,
               speed: 6,
               straight: false,
             },

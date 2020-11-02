@@ -6,9 +6,8 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: "tomato",
     backgroundSize: "100vw 100vh",
     minHeight: "100vh",
-    height: "auto",
-    width: "auto",
-    display: "flex",
+    height: "100%",
+    width: "100%",
   },
   t1: {
     maxWidth: "400px",

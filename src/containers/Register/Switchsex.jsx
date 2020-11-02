@@ -42,7 +42,7 @@ const AntSwitch = withStyles((theme) => ({
   checked: {},
 }))(Switch);
 
-export default function CustomizedSwitches() {
+export default function Sw() {
   const [state, setState] = React.useState({
     gender: 0,
  
