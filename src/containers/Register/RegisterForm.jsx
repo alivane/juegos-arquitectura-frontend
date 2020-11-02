@@ -1,71 +1,96 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import './style.css';
 import Title from './title';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 import Stylesre from './styre';
-import {register} from '../../api';
+import { register } from '../../api';
 import { validatePassword, validateEmail, isEmpty } from '../../utils/validations';
 import InputLineRegister from '../../components/InputLineLogin';
 import SwitchSex from './Switchsex';
-export default class RegisterForm extends React.Component {
-  state = {
+
+const RegisterForm = () => {
+  const history = useHistory()
+  const [state, setState] = useState({
     registerData: {
       name: '',
       email: '',
       password: '',
-      gender:0,
-    },
-    errors: {
-      name: false,
-      email: false,
-      password: false,
-
+      gender: 0,
     }
-  };
+  });
 
+  const [errors, setErrors] = useState({
+    name: false,
+    email: false,
+    password: false,
 
+  });
 
-  doRegister = (event) => {
+  const [stateGender, setStateGender] = useState({
+    gender: false
+  });
 
+  const doRegister = (event) => {
     const {
       name,
       email,
-      password
-    } = this.state.registerData;
+      password,
+    } = state.registerData;
     const nameError = isEmpty(name);
     const emailError = !validateEmail(email);
     const passwordError = !validatePassword(password, email);
 
-    this.setState({
-      errors: {
-        name: nameError,      
-        email: emailError,
-        password: passwordError,
-      }
-
+    setErrors({
+      name: nameError,
+      email: emailError,
+      password: passwordError,
     });
+
+    if (nameError || emailError || passwordError) {
+      alert('Ingrese datos válidos');
+      return;
+    }
+
+    let gender = 0;
+
+    if (stateGender.gender) gender = 1;
+
+    const data = {
+      name, email, password, gender
+    }
+
     event.preventDefault();
-    register(this.state.registerData)
 
-      
+    register(data)
+      .then(response => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        history.push('/login');
+      })
+      .catch(err => {
+        alert('Usuario no se registro correctamente');
+      });
+
   }
-  onChange = (name, event) => {
+
+  const onChange = (name, event) => {
     const value = event.target.value;
-    const registerData = Object.assign({}, this.state.registerData)
-    registerData[name] = value
-    this.setState({
-      registerData
-    });
+    const registerData = Object.assign({}, state.registerData)
+    registerData[name] = value;
 
+    setState({
+      registerData: registerData
+    });
   }
-render(){
- 
-  const {
-    email,
-    password, name} = this.state.registerData;
-  const { errors } = this.state;
+
+
+  const handleStateGenderChange = (event) => {
+    setStateGender({ ...stateGender, [event.target.name]: event.target.checked });
+  };
 
   return (
     <>
@@ -81,9 +106,9 @@ render(){
               name="name"
               type="text"
               required={true}
-              onChange={this.onChange}
+              onChange={onChange}
               error={errors.name}
-              value={name}
+              value={state.registerData.name}
             />
           </div>
           <label className="form_register__label">Correo</label>
@@ -93,9 +118,9 @@ render(){
               name="email"
               type="text"
               required={true}
-              onChange={this.onChange}
+              onChange={onChange}
               error={errors.email}
-              value={email}
+              value={state.registerData.email}
             />
           </div>
           <label className="form_register__label">Contraseña</label>
@@ -107,17 +132,17 @@ render(){
               required={true}
               minLength={4}
               maxLength={8}
-              onChange={this.onChange}
+              onChange={onChange}
               error={errors.password}
-              value={password}
+              value={state.registerData.password}
             />
           </div>
         </div>
         <div className="position_question_register">
-          <SwitchSex />
+          <SwitchSex handleChange={handleStateGenderChange} state={stateGender} />
           <button
             className="form_register__a-register"
-            onClick={this.doRegister}
+            onClick={doRegister}
           >
             Registrar
           </button>
@@ -131,6 +156,8 @@ render(){
       </div>
     </>
   );
-}
+
 
 }
+
+export default RegisterForm;

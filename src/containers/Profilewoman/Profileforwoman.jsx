@@ -50,6 +50,9 @@ export default function Woman(){
 
           <div className="container_2">
             <div className="container_a_box">
+              <a href="game1" className="box_a_container">
+                NIVEL 1
+              </a>
               <a href="avatar" className="box_a_container">
                 INICIAR JUEGO
               </a>

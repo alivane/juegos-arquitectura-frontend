@@ -42,15 +42,9 @@ const AntSwitch = withStyles((theme) => ({
   checked: {},
 }))(Switch);
 
-export default function Sw() {
-  const [state, setState] = React.useState({
-    gender: 0,
- 
-  });
-
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
+const Sw = (props) => {
+  
+  const { state, handleChange } = props;
 
   return (
     <FormGroup className="label1_1">
@@ -66,3 +60,5 @@ export default function Sw() {
     </FormGroup>
   );
 }
+
+export default Sw;

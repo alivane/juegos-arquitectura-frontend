@@ -40,7 +40,7 @@ const InputLineLogin = (props) => {
         title={title}
         list={list && list.id}
         margin="normal"
-        InputLabelProps={{
+        inputlabelprops={{
           shrink: true,
         }}
         variant="outlined"
