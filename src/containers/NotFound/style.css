@@ -3,8 +3,12 @@
     text-align: center;
     position: absolute;
     width: 100%;
-  
-    
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
 
     
    
@@ -31,10 +35,7 @@
     display: block;
     animation-name: mohome;
     animation-duration: 1s;
-    animation-iteration-count: infinite;
-
-
-
+    animation-iteration-count: infinite
 }
 .e2{
     color:green;
@@ -42,9 +43,6 @@
     animation-name: mohome;
     animation-duration: 1s;
     animation-iteration-count: infinite;
-
-
-
 }
 
 
@@ -54,8 +52,6 @@
     position: relative;
     margin: auto;
     margin-bottom: 20px;
-  
- 
 }
 @keyframes mohome{
     0% { color:cyan }
@@ -89,20 +85,9 @@
     .img_notfound{
     margin-bottom: 0px;
     }
-  
-  
+
     }
 
-@media only screen and (max-width: 670px ){
-
- 
-   
-
-}
-
-@media only screen and (max-width:660px){
-   
-    }
 
 @media only screen and (max-width: 655px ){
          
@@ -120,58 +105,4 @@
     
            }
 
-@media only screen and (max-width: 640px ){
-   
-   
-    .e1{
-        font-size: 40px;
-    }
-    .e2{
-        font-size: 30px;
 
-    }
-    .buthome{
-        font-size: 30px;
-    }
-    }   
-@media only screen and (max-width: 570px ){
-    
-    .e1{
-        font-size: 35px;
-    }
-    .e2{
-        font-size: 25px;
-    }
-    .buthome{
-        font-size: 25px;
-    }
-}
-
-@media only screen and (max-width: 460px ){
- 
-    .e1{
-        font-size: 40px;
-        margin-top: 20px;
-    }
-    .e2{
-        font-size: 30px;
-
-    }
-    .buthome{
-        font-size: 30px;
-    }
-    }
-
-@media only screen and (max-width: 280px ){
-
-    .e1{
-        font-size: 35px;
-    }
-    .e2{
-        font-size: 30px;
-    }
-    .buthome{
-        font-size: 30px;
-    }
-    }
-    

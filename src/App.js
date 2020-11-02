@@ -11,16 +11,14 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        {
-          routes.map((route) => (
-            <Route
-              exact
-              key={route.path}
-              path={route.path}
-              component={route.component}
-            />
-          ))
-        }
+        {routes.map((route) => (
+          <Route
+            exact
+            key={route.path}
+            path={route.path}
+            component={route.component}
+          />
+        ))}
       </Switch>
     </Router>
   );

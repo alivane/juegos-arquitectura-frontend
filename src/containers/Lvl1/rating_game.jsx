@@ -23,8 +23,15 @@ export default function Rating1() {
 
   return (
     <div className={classes.root}>
-    <h1 className="rating_title">SIGUE MEJORANDO!</h1>
-      <Rating className={classes.star} name="half-rating-read" value={1.5} defaultValue={5} precision={0.5} readOnly />
+      <h1 className="rating_title">SIGUE MEJORANDO!</h1>
+      <Rating
+        className={classes.star}
+        name="half-rating-read"
+        value={1.5}
+        defaultValue={5}
+        precision={0.5}
+        readOnly
+      />
     </div>
   );
 }

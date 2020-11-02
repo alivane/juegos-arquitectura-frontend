@@ -12,7 +12,7 @@ export default class  Game extends React.Component{
         abierto: false,
     }
     abrirModal = () =>{
-        this.setState({abierto:!this.state.abierto}); // setState : actualizar estado
+      this.setState({ abierto: !this.state.abierto }); // setState : actualizar estado
     }
     
     render(){

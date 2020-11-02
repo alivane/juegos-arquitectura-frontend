@@ -7,51 +7,56 @@ import Prueba from './pages/Prueba2';
 import Profilewoman from './pages/Profilewoman';
 import Profilemen from './pages/Profiemen';
 import Game1 from './pages/Game1';
-import SelectionSex from './pages/SelectionSex'
+import SelectionSex from './pages/SelectionSex';
+import Logout from './pages/Logout';
+
 export const routes = [
   {
-    path: '/',
-    component: Home
+    path: "/",
+    component: Home,
   },
   {
-    path: '/login',
-    component: Login
+    path: "/login",
+    component: Login,
   },
   {
-    path: '/register',
-    component: Register
+    path: "/register",
+    component: Register,
   },
   {
-    path: '/recovery',
-    component: Recovery
+    path: "/recovery",
+    component: Recovery,
   },
   {
-    path: '/home',
-    component: Home
+    path: "/home",
+    component: Home,
   },
   {
-    path: '/prueba',
-    component: Prueba
+    path: "/prueba",
+    component: Prueba,
   },
   {
-    path: '/profilewoman',
-    component: Profilewoman
+    path: "/profilewoman",
+    component: Profilewoman,
   },
   {
-    path: '/profilemen',
-    component: Profilemen
+    path: "/profilemen",
+    component: Profilemen,
   },
   {
-    path: '/game1',
-    component: Game1
+    path: "/game1",
+    component: Game1,
   },
   {
-    path: '/selectionsex',
-    component: SelectionSex
+    path: "/selectionsex",
+    component: SelectionSex,
   },
   {
-    path:'*',
-    component: NotFound
+    path: "/logout",
+    component: Logout,
   },
- 
-]
+  {
+    path: "*",
+    component: NotFound,
+  },
+];

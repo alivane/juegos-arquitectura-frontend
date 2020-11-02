@@ -15,8 +15,7 @@
        padding:10px 20px;  
        height: 60%;
        margin: auto;
-
- 
+       overflow: auto;
       } 
     
  .header {
@@ -154,33 +153,89 @@
 }
 
 @media only screen and (max-width: 570px ){
-         
+
         .header{
               margin-top:10px;
               margin-bottom: 10px;
               text-align: center;
 
         }     
-       }
+    
+}
        
-@media only screen and (max-width: 460px ){
-
+@media only screen and (max-width: 500px ){
+       .t2{
+              padding: 0px 10px;
+       }
         .header{
                margin-bottom: 200px;
-        }       
+        }  
+        .head{
+              font-size: 30px;
+       }
+       .head2{
+              font-size: 35px;
+
+       } .head3{
+              font-size: 35px;
+  
+       } .head4{
+              font-size: 35px;
+ 
+       } .head5{
+              font-size: 35px;
+
+       } .head6{
+              font-size: 35px;
+  
+       } .head7{
+              font-size: 35px;
+  
+       } .head8{
+              font-size: 35px;
+  
+       } .head9{
+              font-size: 35px;
+ 
+       }     
 
          
           
        }
       
-@media only screen and (max-width: 340px ){
-                  
-       }
+
        
 
-@media only screen and (max-width: 240px ){
-             
-       
+@media only screen and (max-width: 320px ){
+        
+       .head{
+              font-size: 25px;
+       }
+       .head2{
+              font-size:28px;
+
+       } .head3{
+              font-size:28px;
+  
+       } .head4{
+              font-size:28px;
+ 
+       } .head5{
+              font-size:28px;
+
+       } .head6{
+              font-size:28px;
+  
+       } .head7{
+              font-size:20px;
+  
+       } .head8{
+              font-size:28px;
+  
+       } .head9{
+              font-size:28px;
+ 
+       }
        
            .butl{
               width: 80%;

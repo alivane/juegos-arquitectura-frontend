@@ -4,11 +4,9 @@ import Particles from "react-tsparticles";
 export default class Styleslo extends React.Component {
   render() {
     return (
-     
       <Particles
         id="tsparticles_register"
         options={{
-         
           fpsLimit: 60,
           interactivity: {
             detectsOn: "canvas",
@@ -77,12 +75,12 @@ export default class Styleslo extends React.Component {
             size: {
               random: true,
               value: 6,
-            anim: {
-             "enable": true,
-               "speed": 80,
-             "size_min": 0.1,
-             "sync": true
-           }
+              anim: {
+                enable: true,
+                speed: 80,
+                size_min: 0.1,
+                sync: true,
+              },
             },
           },
           detectRetina: true,

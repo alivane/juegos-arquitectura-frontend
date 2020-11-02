@@ -3,10 +3,5 @@ import ProfileMen from '../containers/Profilemen/Profileformen';
 
 
 export default function Profilemen() {
-  return (
-
-        <ProfileMen />
-     
-        
-  );
+  return <ProfileMen />;
 }

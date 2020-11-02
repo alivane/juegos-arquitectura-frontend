@@ -5,12 +5,15 @@
    text-align: center;
    box-sizing: border-box;
    position: absolute;
-   top: 50%;
-   right: 50%;
-   width: auto;
-   transform: translate(50%, -50%);
-  max-width: 90%;
-  padding: 2em 3em;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-self: center;
+    background: blue;
+    padding: 2em 3em;
+    overflow: auto;
+
 }
 
 
@@ -79,12 +82,11 @@
 }
 .form_recovery__container-icon{
     position: absolute;
-    transform: translate(30%,70%);
+    transform: translate(50%,70%);
     font-size: 25px;
 }
 
 .form_recovery__container-input{
-    padding-left: 40px;
     width:60%;
     box-sizing: border-box;
     border-radius: 10px;

@@ -8,38 +8,36 @@ export default function HomeForm() {
 
   return (
     <>
-     <div className={classes.bgh}>
-    <div className="t2">
-    <Title/>
-    <div>
-    <Button 
-           variant="contained"
-           color="primary"
-           role="link"
-            href="login"
-            classes={{
-              root: classes.root,
-            }}
-           
-           >
-        INGRESO
-      </Button>
-      </div>
-      <div>
-      <Button 
-      
-      variant="contained"
-      color="primary"
-      role="link"
-       href="register"
-       classes={{
-         root: classes.root,
-       }}>Registrate
-      </Button>
-      </div>
-
-    
-      </div>
+      <div className={classes.bgh}>
+        <div className="t2">
+          <Title />
+          <div>
+            <Button
+              variant="contained"
+              color="primary"
+              role="link"
+              href="login"
+              classes={{
+                root: classes.root,
+              }}
+            >
+              INGRESO
+            </Button>
+          </div>
+          <div>
+            <Button
+              variant="contained"
+              color="primary"
+              role="link"
+              href="register"
+              classes={{
+                root: classes.root,
+              }}
+            >
+              Registrate
+            </Button>
+          </div>
+        </div>
       </div>
     </>
   );

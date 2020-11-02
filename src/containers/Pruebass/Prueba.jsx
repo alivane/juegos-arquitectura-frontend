@@ -14,37 +14,33 @@ abrirModal = () =>{
 
 render(){
 
-    return(
-        
-        <>
-            <div className="principal">
-                    <button className="bb1" onClick={this.abrirModal}>Mostrar Modal</button>
-            </div> 
-       
-         
-        
+    return (
+      <>
+        <div className="principal">
+          <button className="bb1" onClick={this.abrirModal}>
+            Mostrar Modal
+          </button>
+        </div>
 
-            <Modal isOpen={this.state.abierto} className="modal-1">
-                <ModalHeader >
-                    INICIAR SESION
-                </ModalHeader>
-                <ModalBody >
-                <FormGroup>
-                    <label for="usuario">Usuario</label>
-                    <input type="text" id="usuario"/>
-                </FormGroup>
-                <FormGroup>
-                    <Label for="password">Contraseña</Label>
-                    <Input type="text" id="password"/>
-                </FormGroup>
-                </ModalBody>
-                <ModalFooter>
-                <Button class="btn btn-primary"  onClick={this.abrirModal}>Cerrar</Button>
-                </ModalFooter>
-            </Modal>
-        </>
-    
-    
+        <Modal isOpen={this.state.abierto} className="modal-1">
+          <ModalHeader>INICIAR SESION</ModalHeader>
+          <ModalBody>
+            <FormGroup>
+              <label for="usuario">Usuario</label>
+              <input type="text" id="usuario" />
+            </FormGroup>
+            <FormGroup>
+              <Label for="password">Contraseña</Label>
+              <Input type="text" id="password" />
+            </FormGroup>
+          </ModalBody>
+          <ModalFooter>
+            <Button class="btn btn-primary" onClick={this.abrirModal}>
+              Cerrar
+            </Button>
+          </ModalFooter>
+        </Modal>
+      </>
     );          
 }
 }
