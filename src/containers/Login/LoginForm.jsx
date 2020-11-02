@@ -4,7 +4,7 @@ import Title from './title';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import LockIcon from '@material-ui/icons/Lock';
 import Styleslo from './stylo';
-import { login } from '../api';
+import { login } from '../../api';
 
 export default class LoginForm extends React.Component {
     state = {

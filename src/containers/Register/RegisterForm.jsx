@@ -5,7 +5,7 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 import Stylesre from './styre';
-import { register } from '../api';
+import { register } from '../../api';
 
 export default class RegisterForm extends React.Component {
   state = {

@@ -1,0 +1,582 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.game {
+    outline: 5px solid #00E0FF;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.3fr 1fr;
+    height: 100vh;
+    background-image: url("../img/bgame.png");
+}
+
+.tt1 {
+    color: white;
+    margin-right: 20px;
+}
+
+.time_container {
+    grid-column: 1/ span 2;
+}
+
+.reloj {
+    padding: 20px;
+    background-image: url("../img/gis.jpg");
+    width: 150px;
+    height: 150px;
+    border-radius: 350px;
+    background-color: #ededed;
+    background-size: 100%;
+    border: 20px solid #555;
+    display: flex;
+}
+
+.reloj img {
+    position: relative;
+    height: 70px;
+    transition: all 0.5s;
+}
+
+.reloj #minutos {
+    position: absolute;
+}
+
+.reloj #segundos {
+    position: absolute;
+    animation-name: r1;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: steps(3);
+}
+
+@keyframes r1 {
+    0% {
+        transform: rotate(30deg);
+    }
+    10% {
+        transform: rotate(60deg);
+    }
+    20% {
+        transform: rotate(90deg);
+    }
+    30% {
+        transform: rotate(120deg);
+    }
+    40% {
+        transform: rotate(150deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    60% {
+        transform: rotate(210deg);
+    }
+    70% {
+        transform: rotate(240deg);
+    }
+    80% {
+        transform: rotate(270deg);
+    }
+    90% {
+        transform: rotate(300deg);
+    }
+    95% {
+        transform: rotate(330deg);
+    }
+    98% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.container_reloj {
+    display: flex;
+    padding: 10px 100px;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.game_container {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 0.1fr 0.5fr 0.1fr 0.1fr;
+}
+
+.game_container_1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 3;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.game_container_1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    background-size: 400%;
+    transition: 0.5s;
+    animation: animate 15s linear infinite;
+}
+
+.game_container_1::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    background-size: 400%;
+    transition: 0.5s;
+    opacity: 1;
+    filter: blur(20px);
+    animation: animate 20s linear infinite;
+}
+
+.span_game {
+    position: absolute;
+    background: #0c0c0c;
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    bottom: 5px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    z-index: 100;
+}
+
+.level_container {
+    font-family: roboto;
+    text-align: center;
+    grid-column: 2 / span 3;
+    color: white;
+    font-weight: 900;
+    -webkit-text-stroke: 1px #00B0FA;
+    font-size: 30px;
+}
+
+.flecha_1 {
+    justify-self: center;
+    align-self: center;
+}
+
+.vertical_arrow_up {
+    color: white;
+    transform: rotate(-90deg) scaleX(10);
+}
+
+.vertical_arrow_down {
+    color: white;
+    transform: rotate(90deg) scaleX(10);
+}
+
+.flecha_1_1 {
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    transform: rotate(-90deg);
+    align-self: center;
+}
+
+.flecha_1_1_1 {
+    justify-self: center;
+    align-self: center;
+}
+
+.flecha_2 {
+    text-align: center;
+    grid-column: 2;
+}
+
+.flecha_2_2 {
+    color: white;
+    font-weight: 900;
+    text-align: center;
+}
+
+.flecha_2_2_2 {
+    text-align: center;
+}
+
+.arrow_right {
+    color: white;
+    transform: scaleX(13);
+}
+
+.arrow_left {
+    color: white;
+    transform: rotate(180deg) scaleX(13);
+}
+
+.piece_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_11 {
+    background: rgba(255, 255, 255, 0.55);
+    height: 40%;
+    margin-bottom: 30px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.container_1_sala {
+    background: black;
+    margin-top: 0px;
+    margin-left: 40px;
+    height: 75%;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ele {
+    background: none;
+    color: white;
+    border: none;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.ele:focus {
+    outline: none;
+    color: rgb(253, 253, 31);
+}
+
+.container_1_precio {
+    margin-top: 10px;
+    height: 70%;
+    width: 100%;
+    margin-left: 30px;
+}
+
+.terreno {
+    color: white;
+    font-weight: 900;
+}
+
+.presupuesto {
+    color: white;
+    font-weight: 900;
+}
+
+.gastos {
+    color: #FF4343;
+    font-weight: 900;
+}
+
+.total {
+    color: #00ff37;
+    font-weight: 900;
+}
+
+.container_22 {
+    background: rgba(255, 255, 255, 0.55);
+    height: 40%;
+    width: 80%;
+    border-radius: 15px;
+}
+
+.bb1 {
+    position: relative;
+    background: none;
+    float: right;
+    width: 200px;
+    height: 50px;
+    margin-left: 20%;
+    left: 0%;
+}
+
+.bb1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    background-size: 400%;
+    transition: 0.5s;
+    animation: animate 15s linear infinite;
+}
+
+.bb1_span {
+    position: absolute;
+    background: #0c0c0c;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    bottom: 5px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header_level {
+    align-self: center;
+}
+
+.footer_game {
+    justify-content: center;
+}
+
+.body_level {
+    align-self: center;
+    justify-content: center;
+}
+
+.rating_title {
+    text-align: center;
+}
+
+.container_rating {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.container_rating::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    background-size: 400%;
+    transition: 0.5s;
+    animation: animate 15s linear infinite;
+}
+
+.container_rating::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    background-size: 400%;
+    transition: 0.5s;
+    opacity: 1;
+    filter: blur(20px);
+    animation: animate 20s linear infinite;
+}
+
+.sp1 {
+    position: absolute;
+    background: #0c0c0c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 48px;
+    letter-spacing: 2px;
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    bottom: 5px;
+    color: white;
+    z-index: 100;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 300% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.tercero_img {
+    height: 100px;
+    width: 100px;
+}
+
+.next_level {
+    background: linear-gradient(40deg, #00F69E 30%, rgba(255, 0, 0, 0.5) 90%);
+    box-shadow: 0 3px 5px 3px rgba(255, 105, 135, .3);
+    padding: 0.5em 0.5em;
+    box-sizing: border-box;
+    border-radius: 10%;
+    width: 140px;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    outline: none;
+    transition: all 1s;
+}
+
+.next_level:hover {
+    text-decoration: none;
+    color: black;
+    background: linear-gradient(40deg, rgba(255, 0, 0, 0.5) 30%, #00F69E 90%);
+}
+
+.buton_out {
+    background: linear-gradient(40deg, #FFF500 30%, rgba(255, 0, 0, 0.5) 90%);
+    padding: 0.5em 0.5em;
+    box-sizing: border-box;
+    border-radius: 10%;
+    width: 140px;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    box-shadow: 0 3px 5px 3px rgba(255, 105, 135, .3);
+    transition: all 1s;
+}
+
+.buton_out:hover {
+    text-decoration: none;
+    color: black;
+    background: linear-gradient(40deg, rgba(255, 0, 0, 0.5) 30%, #FFF500 90%);
+}
+
+@media screen and (max-width:900px) {
+    .game_container {
+        grid-template-columns: 30px 0.5fr 0.5fr 0.5fr;
+        grid-template-rows: 0.5fr 0.3fr 0.5fr 30px 0.1fr;
+    }
+    .bb1 {
+        transform: scale(0.5);
+        left: 20%;
+        margin-left: 0%;
+    }
+    .flecha_1_1 {
+        font-size: 10px;
+    }
+    .flecha_2_2 {
+        font-size: 10px;
+        align-self: center;
+    }
+    .reloj {
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+        border: 5px solid #555;
+        display: flex;
+    }
+    .reloj img {
+        height: 2px;
+        transform: scale(10);
+    }
+    .reloj #segundos {
+        height: 2px;
+    }
+    .tt1_1 {
+        font-size: 10px;
+    }
+    .tt1_1_1 {
+        font-size: 10px;
+    }
+    .container_11 {
+        margin-bottom: 20px;
+    }
+    .container_1_sala {
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        border-radius: 10px;
+        text-align: center;
+        width: 50%;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15px;
+    }
+    .ele {
+        font-size: 10px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .level_container {
+        font-size: 12px;
+    }
+    .container_1_precio {
+        margin-top: 10px;
+        height: 70%;
+        width: 100%;
+        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .terreno {
+        font-size: 10px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+    .presupuesto {
+        font-size: 10px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+    .gastos {
+        font-size: 10px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+    .total {
+        font-size: 10px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+    .vertical_arrow {
+        color: white;
+        transform: scaleY(3);
+    }
+    .arrow_right {
+        color: white;
+        transform: scaleX(7);
+    }
+    .arrow_left {
+        color: white;
+        transform: rotate(180deg) scaleX(7);
+    }
+    .header_title {
+        font-size: 10px;
+        font-weight: 900;
+    }
+    .rating_title {
+        font-size: 10px;
+        font-weight: 900;
+    }
+    .container_rating {
+        position: relative;
+        width: 200px;
+        height: 120px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    .tercero_img {
+        height: 50px;
+    }
+    .next_level {
+        font-size: 10px;
+        width: 100px;
+    }
+    .buton_out {
+        font-size: 10px;
+        width: 100px;
+    }
+}
