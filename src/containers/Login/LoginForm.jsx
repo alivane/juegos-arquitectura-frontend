@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
+import { useHistory } from "react-router-dom";
 import Title from './title';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import LockIcon from '@material-ui/icons/Lock';
@@ -7,27 +8,28 @@ import Styleslo from './stylo';
 import {login} from '../../api';
 import { validatePassword, validateEmail } from '../../utils/validations';
 import InputLineLogin from '../../components/InputLineLogin';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+
+const LoginForm = () => {
+  const history = useHistory()
+  const [state, setState] = useState({
+    loginData: {
+      email: '',
+      password: '',
+   
+    }
+  });
+  const [errors, setErrors] = useState({
+    email: false,
+    password: false,
 
 
-export default class LoginForm extends React.Component {
-    state = {
-        loginData: {
-          email: '',
-          password: ''
-        },
-        errors: {
-          email: false,
-          password: false
-        }
-      };
-    
-    
-    
-      doLogin = (event) => {
+  });
+      const doLogin = (event) => {
         
         const {
           email,
-          password } = this.state.loginData;
+          password } = state.loginData;
         const emailError = !validateEmail(email);
         const passwordError = !validatePassword(password, email);
     
@@ -35,16 +37,16 @@ export default class LoginForm extends React.Component {
         console.log('Email error: ' + emailError);
         console.log('Password error: ' + passwordError);
     
-        this.setState({
-          errors: {
-            email: emailError,
-            password: passwordError
-          }
-    
+        setErrors({
+          email: emailError,
+          password: passwordError,
         });
+         
+    const data = {
+      email, password
+    }
         event.preventDefault();
-    
-        login(this.state.loginData)
+        login(data)
           .then(response => {
             if(!response.ok){
               throw Error(response.statusText);
@@ -52,30 +54,25 @@ export default class LoginForm extends React.Component {
             return response.text();
           })
           .then(token => {
-            localStorage.setItem('token',token);
-            this.props.history.push('/profilewoman'); 
-           
+            localStorage.setItem('token', token);
+           history.push('optionlevel');
           })
           .catch(err => {
             alert('Usuario no registrado o datos ingresados invalidos');
-            this.props.history.push('/login');
+            history.push('/login');
           });
       }
     
-      onChange = (name, event) => {
+      const onChange = (name, event) => {
         const value = event.target.value;
-        const loginData = Object.assign({}, this.state.loginData)
+        const loginData = Object.assign({},state.loginData)
         loginData[name] = value
-        this.setState({
-          loginData
+        setState({
+          loginData: loginData
         });
       }
     
-    render(){
-        const {
-            email,
-            password } = this.state.loginData;
-          const { errors } = this.state;
+
   return (
     <>
       <Styleslo />
@@ -90,10 +87,20 @@ export default class LoginForm extends React.Component {
               label="Correo"
               type="text"
               required={true}
-              onChange={this.onChange}
+              onChange={onChange}
               error={errors.email}
-              value={email}
+              value={state.loginData.email}
             />
+
+            {errors.email && (
+              <span
+                id="error_email"
+                className="text-danger text-small d-block mb-2"
+              >
+                <ErrorOutlineIcon />
+                Ingrese un email v&aacute;lido
+              </span>
+            )}
           </div>
           <label className="form_login__label">Contraseña</label>
           <div className="form_login__container">
@@ -105,14 +112,20 @@ export default class LoginForm extends React.Component {
               required={true}
               minLength={4}
               maxLength={8}
-              onChange={this.onChange}
+              onChange={onChange}
               error={errors.password}
-              value={password}
+              value={state.loginData.password}
             />
+            {errors.password && (
+              <span className="text-danger text-small d-block mb-2">
+                <ErrorOutlineIcon className="error_email" />
+                Ingrese una contraseña v&aacute;lida
+              </span>
+            )}
           </div>
         </div>
         <div className="position_question_login">
-          <button className="form_login__a-login" onClick={this.doLogin}>
+          <button className="form_login__a-login" onClick={doLogin}>
             INICIAR SESIÓN
           </button>
           <a href="recovery" className="a_question">
@@ -129,8 +142,8 @@ export default class LoginForm extends React.Component {
     </>
   );
     }
-}
 
+    export default LoginForm;
 
 // CAMBIAR FONDO EN EL CUAL LAS FIGURAS SE VAYAN COLOCANDO AL AZAR FONDO GIF LE GUSTO AL CLIENTE 
 // Clientes prefieren display horizontal 

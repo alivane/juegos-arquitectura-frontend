@@ -43,7 +43,6 @@ const InputLineRegister = (props) => {
         }}
         variant="outlined"
       />
-
       {list && (
         <datalist id={list.id}>
           {list.options.map((option, key) => (
@@ -54,5 +53,4 @@ const InputLineRegister = (props) => {
     </>
   );
 }
-
 export default InputLineRegister;

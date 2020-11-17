@@ -33,10 +33,10 @@ export default class Stylespar extends React.Component {
               value: 1,
               random: false,
               anim: {
-                enable: false,
+                enable: true,
                 speed: 1,
                 opacity_min: 0.1,
-                sync: false,
+                sync: true,
               },
             },
             size: {

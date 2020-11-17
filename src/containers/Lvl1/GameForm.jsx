@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
-import Timer from '../Lvl1/timer';
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles/Gamestyle.css';
 import Terreno from './Terreno';
 import Shapes from '../Figuras/Shapes';
 import ZoneRandom from './ZoneRandom';
-import ModalGame from './Modal';
 import { ButtonOption } from './styles/style';
-
+import TimeContainer from '../../components/TimeContainer'
 const GameForm = () => {
-  const [state, setState] = useState({
-    abierto: false,
-  })
+
   const [option1, setOption1] = useState(true);
   const [option2, setOption2] = useState(false);
   const [option3, setOption3] = useState(false);
@@ -21,10 +17,6 @@ const GameForm = () => {
   // const [presupuesto, setPresupuesto] = useState(300000);
   const [gasto, setGasto] = useState(0);
   const presupuesto = 300000;
-  
-  const abrirModal = () => {
-    setState({ abierto: !state.abierto }); // setState : actualizar estado
-  }
 
   const [shapes, setShapes] = useState([]);
 
@@ -54,20 +46,8 @@ const GameForm = () => {
   return (
     <>
       <div className="game">
-        <div className="time_container">
-          <div className="container_reloj">
-            <a className="bb1" onClick={() => abrirModal()} href>
-              <span className="bb1_span">Finalizar</span>
-            </a>
-            <div className="reloj">
-              <img src="agujaMinutos.png" alt="" id="minutos" />
-              <img src="agujaSegundos.png" alt="" id="segundos" />
-            </div>
-            <Timer />
-          </div>
-          <ModalGame state={state} />
-        </div>
-
+     
+    <TimeContainer/>
         <Terreno shapes={shapes} />
 
         <div className="piece_container">

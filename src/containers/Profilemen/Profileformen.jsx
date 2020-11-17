@@ -1,6 +1,6 @@
 import React from "react";
 import './stylepromen.css';
-
+import OptionsGame from '../../components/OptionsGame'
 
 export default function ProfileMen(){
 
@@ -47,30 +47,7 @@ export default function ProfileMen(){
             </div>
           </div>
 
-          <div className="container_2">
-            <div className="container_a_box">
-              <a href="avatar" className="box_a_container">
-                INICIAR JUEGO
-              </a>
-              <a href="achievements" className="box_a_container">
-                Logros
-              </a>
-              <a href="ranking" className="box_a_container">
-                Rango
-              </a>
-              <a href="money" className="box_a_container">
-                Monedas
-              </a>
-              <div className="boxx_container">
-                <a href="start" className="box2_a_container">
-                  Guardar
-                </a>
-                <a href="home" className="box3_a_container">
-                  Salir
-                </a>
-              </div>
-            </div>
-          </div>
+          <OptionsGame/>
         </div>
       </>
     );

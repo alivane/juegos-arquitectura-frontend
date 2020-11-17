@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '../../Lvl1/styles/node_modules/styled-components'
 
 export const CuadroTerreno = styled.div `
   position: relative;

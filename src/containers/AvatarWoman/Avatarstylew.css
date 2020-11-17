@@ -1,0 +1,9 @@
+.boton_avatar_w{
+    background: rgba(205, 53, 229, 0.28);
+    color: white;
+    font-size: 20px;
+    outline: 2px solid #00FFD1;
+}
+.boton_avatar_w:focus{
+    outline: 2px solid #00FFD1;
+}

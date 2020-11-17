@@ -1,9 +1,8 @@
 .container_game{
-    border: 1px solid cyan;
     display: grid;
     grid-template-columns: 1fr 0.5fr;
     height: 100vh;
-    background-image: url(./bgprofile.png);
+    background-image: url(../img/bgprofile.png);
     background-size: 100vw 100vh;
     min-height: 100vh;
     overflow: auto;
@@ -299,7 +298,9 @@
     .container_a_box{
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        grid-column-gap:20px;
+        grid-column-gap:10px;
+        justify-items: center;
+
     }
     .boxx_container{
         grid-column: 1/span 2;

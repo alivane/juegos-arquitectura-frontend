@@ -6,7 +6,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 0.3fr 1fr;
     height: 100vh;
-    background-image: url("../img/bgame.png");
+    background-image: url("../../img/bgame.png");
     overflow: auto;
 }
 
@@ -21,7 +21,7 @@
 
 .reloj {
     padding: 20px;
-    background-image: url("../img/gis.jpg");
+    background-image: url("../../img/gis.jpg");
     width: 150px;
     height: 150px;
     border-radius: 350px;

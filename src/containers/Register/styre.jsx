@@ -1,7 +1,7 @@
 import React from 'react';
 import Particles from "react-tsparticles";
 
-export default class Styleslo extends React.Component {
+export default class Stylesre extends React.Component {
   render() {
     return (
       <Particles

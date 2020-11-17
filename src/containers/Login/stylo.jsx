@@ -1,7 +1,7 @@
 import React from 'react';
 import Particles from "react-tsparticles";
 
-export default class Stylesre extends React.Component {
+export default class Styleslo extends React.Component {
   render() {
     return (
      
@@ -31,7 +31,7 @@ export default class Stylesre extends React.Component {
                 size: 40,
               },
               push: {
-                quantity: 1,
+                quantity: 10,
               },
               repulse: {
                 distance: 200,
@@ -66,7 +66,7 @@ export default class Stylesre extends React.Component {
                 enable: true,
                 value_area: 800,
               },
-              value: 1,
+              value: 10,
             },
             opacity: {
               value: 1,

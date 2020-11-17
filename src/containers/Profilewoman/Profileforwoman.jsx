@@ -1,5 +1,6 @@
 import React from "react";
 import './stylepro.css';
+import OptionsGame from '../../components/OptionsGame'
 
 
 export default function Woman(){
@@ -47,34 +48,8 @@ export default function Woman(){
               </a>
             </div>
           </div>
-
-          <div className="container_2">
-            <div className="container_a_box">
-              <a href="game1" className="box_a_container">
-                NIVEL 1
-              </a>
-              <a href="avatar" className="box_a_container">
-                INICIAR JUEGO
-              </a>
-              <a href="achievements" className="box_a_container">
-                Logros
-              </a>
-              <a href="ranking" className="box_a_container">
-                Rango
-              </a>
-              <a href="money" className="box_a_container">
-                Monedas
-              </a>
-              <div className="boxx_container">
-                <a href="start" className="box2_a_container">
-                  Guardar
-                </a>
-                <a href="home" className="box3_a_container">
-                  Salir
-                </a>
-              </div>
-            </div>
-          </div>
+      <OptionsGame/>
+    
         </div>
       </>
     );

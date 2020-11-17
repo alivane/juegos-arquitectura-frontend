@@ -7,8 +7,16 @@ import Prueba from './pages/Prueba2';
 import Profilewoman from './pages/Profilewoman';
 import Profilemen from './pages/Profiemen';
 import Game1 from './pages/Game1';
+import Game2 from './pages/Game2';
+import Game3 from './pages/Game3';
 import SelectionSex from './pages/SelectionSex';
 import Logout from './pages/Logout';
+import AvatarMen from './pages/AvatarMen';
+import AvatarWoman from './pages/AvatarWoman';
+import Logros from './pages/Logros';
+import OptionLevel from './pages/OptionLevel';
+import Rank from './pages/Rank';
+import Coins from './pages/Coins';
 
 export const routes = [
   {
@@ -48,12 +56,43 @@ export const routes = [
     component: Game1,
   },
   {
+    path: "/game2",
+    component: Game2,
+  }, {
+    path: "/game3",
+    component: Game3,
+  },
+  {
     path: "/selectionsex",
     component: SelectionSex,
   },
   {
     path: "/logout",
     component: Logout,
+  },  
+  {
+    path: "/avatarmen",
+    component: AvatarMen,
+  },
+  {
+    path: "/avatarwoman",
+    component: AvatarWoman,
+  },
+  {
+    path: "/optionlevel",
+    component: OptionLevel,
+  },
+  {
+    path: "/logros",
+    component: Logros,
+  },
+  {
+    path: "/rank",
+    component: Rank,
+  },
+  {
+    path: "/coins",
+    component: Coins,
   },
   {
     path: "*",

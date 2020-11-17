@@ -6,7 +6,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 0.3fr 1fr;
     height: 100vh;
-    background-image: url("../img/bgame.png");
+    background-image: url("../../img/bgame.png");
     overflow: auto;
 }
 
@@ -21,7 +21,7 @@
 
 .reloj {
     padding: 20px;
-    background-image: url("../img/gis.jpg");
+    background-image: url("../../img/gis.jpg");
     width: 150px;
     height: 150px;
     border-radius: 350px;
@@ -105,52 +105,6 @@
     grid-template-rows: 0.5fr 0.1fr 0.5fr 0.1fr 0.1fr;
 }
 
-.game_container_1 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    grid-column: 2 / span 3;
-    grid-row: 1 / span 3;
-    background: rgba(255, 255, 255, 0.55);
-}
-
-.game_container_1::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
-    background-size: 400%;
-    transition: 0.5s;
-    animation: animate 15s linear infinite;
-}
-
-.game_container_1::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
-    background-size: 400%;
-    transition: 0.5s;
-    opacity: 1;
-    filter: blur(20px);
-    animation: animate 20s linear infinite;
-}
-
-.span_game {
-    position: absolute;
-    background: #0c0c0c;
-    top: 5px;
-    right: 5px;
-    left: 5px;
-    bottom: 5px;
-    color: white;
-    font-size: 30px;
-    text-align: center;
-    z-index: 100;
-}
-
 .level_container {
     font-family: roboto;
     text-align: center;
@@ -164,6 +118,7 @@
 .flecha_1 {
     justify-self: center;
     align-self: center;
+    margin-right: -80%;
 }
 
 .vertical_arrow_up {
@@ -175,23 +130,32 @@
     color: white;
     transform: rotate(90deg) scaleX(10);
 }
-
+.flecha_1 {
+    justify-self: center;
+    align-self: center;
+    margin-right: -80%;
+}
 .flecha_1_1 {
     text-align: center;
     color: white;
     font-weight: 900;
     transform: rotate(-90deg);
     align-self: center;
+    margin-right: -80%;
+
 }
 
 .flecha_1_1_1 {
     justify-self: center;
     align-self: center;
+    margin-right: -80%;
+
 }
 
 .flecha_2 {
     text-align: center;
     grid-column: 2;
+    margin-right: -30%;
 }
 
 .flecha_2_2 {
@@ -202,16 +166,19 @@
 
 .flecha_2_2_2 {
     text-align: center;
+    margin-left: -30%;
 }
 
 .arrow_right {
     color: white;
     transform: scaleX(13);
+
 }
 
 .arrow_left {
     color: white;
     transform: rotate(180deg) scaleX(13);
+
 }
 
 .piece_container {
@@ -461,8 +428,23 @@
         left: 20%;
         margin-left: 0%;
     }
+    h1{
+        font-size: 10px;
+    }
+    .flecha_1 {
+
+        margin-right: -50%;
+    }
     .flecha_1_1 {
         font-size: 10px;
+        margin-right: -50%;
+    
+    }
+    
+    .flecha_1_1_1 {
+
+        margin-right: -50%;
+    
     }
     .flecha_2_2 {
         font-size: 10px;
@@ -541,6 +523,17 @@
         margin-top: 0px;
         margin-bottom: 5px;
     }
+    .vertical_arrow_up {
+        color: white;
+        transform: rotate(-90deg) scaleX(5);
+    }
+    
+    .vertical_arrow_down {
+        color: white;
+        transform: rotate(90deg) scaleX(5);
+    }
+   
+    
     .vertical_arrow {
         color: white;
         transform: scaleY(3);
@@ -579,4 +572,22 @@
         font-size: 10px;
         width: 100px;
     }
+}
+@media screen and (max-width:655px) {
+    .flecha_2 {
+        margin-right: 0%;
+    }
+    .flecha_2_2_2 {
+        margin-left: 0%;
+    }
+    .arrow_right {
+        transform: scaleX(5);
+    
+    }
+    
+    .arrow_left {
+        transform: rotate(180deg) scaleX(5);
+    
+    }
+    
 }

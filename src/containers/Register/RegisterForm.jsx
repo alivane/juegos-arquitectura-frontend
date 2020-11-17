@@ -8,8 +8,9 @@ import LockIcon from '@material-ui/icons/Lock';
 import Stylesre from './styre';
 import { register } from '../../api';
 import { validatePassword, validateEmail, isEmpty } from '../../utils/validations';
-import InputLineRegister from '../../components/InputLineLogin';
+import InputLineRegister from '../../components/InputLineRegister';
 import SwitchSex from './Switchsex';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 
 const RegisterForm = () => {
   const history = useHistory()
@@ -33,6 +34,7 @@ const RegisterForm = () => {
     gender: false
   });
 
+  
   const doRegister = (event) => {
     const {
       name,
@@ -54,10 +56,13 @@ const RegisterForm = () => {
       return;
     }
 
+    
+
     let gender = 0;
 
     if (stateGender.gender) gender = 1;
 
+  
     const data = {
       name, email, password, gender
     }
@@ -69,9 +74,15 @@ const RegisterForm = () => {
         if (!response.ok) {
           throw Error(response.statusText);
         }
-        history.push('/login');
+        if(gender===1){
+          history.push('/profilewoman');
+        }
+        if(gender===0){
+          history.push('/profilemen');
+        }
       })
       .catch(err => {
+        
         alert('Usuario no se registro correctamente');
       });
 
@@ -108,8 +119,16 @@ const RegisterForm = () => {
               required={true}
               onChange={onChange}
               error={errors.name}
+              id="name"
               value={state.registerData.name}
             />
+                {
+    errors.email && <span className="text-danger text-small d-block mb-2">
+    <ErrorOutlineIcon />
+    Ingrese un nombre de usuario v&aacute;lido
+    </span>
+      }
+
           </div>
           <label className="form_register__label">Correo</label>
           <div className="form_register__container">
@@ -120,8 +139,15 @@ const RegisterForm = () => {
               required={true}
               onChange={onChange}
               error={errors.email}
-              value={state.registerData.email}
+              id="email"
+              value={state.registerData.email}              
             />
+            {
+    errors.email && <span className="text-danger text-small d-block mb-2">
+    <ErrorOutlineIcon />
+    Ingrese un email v&aacute;lido
+    </span>
+      }
           </div>
           <label className="form_register__label">Contraseña</label>
           <div className="form_register__container">
@@ -134,12 +160,19 @@ const RegisterForm = () => {
               maxLength={8}
               onChange={onChange}
               error={errors.password}
+              id="password"
               value={state.registerData.password}
             />
+            {
+    errors.email && <span className="text-danger text-small d-block mb-2">
+    <ErrorOutlineIcon />
+    Ingrese una contraseña v&aacute;lida
+    </span>
+      }
           </div>
         </div>
         <div className="position_question_register">
-          <SwitchSex handleChange={handleStateGenderChange} state={stateGender} />
+          <SwitchSex handleChange={handleStateGenderChange} state={stateGender} id="gender" />
           <button
             className="form_register__a-register"
             onClick={doRegister}
