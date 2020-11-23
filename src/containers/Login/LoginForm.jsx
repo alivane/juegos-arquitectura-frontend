@@ -4,11 +4,11 @@ import { useHistory } from "react-router-dom";
 import Title from './title';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import LockIcon from '@material-ui/icons/Lock';
-import Styleslo from './stylo';
 import {login} from '../../api';
 import { validatePassword, validateEmail } from '../../utils/validations';
 import InputLineLogin from '../../components/InputLineLogin';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 
 const LoginForm = () => {
   const history = useHistory()
@@ -19,6 +19,7 @@ const LoginForm = () => {
    
     }
   });
+
   const [errors, setErrors] = useState({
     email: false,
     password: false,
@@ -33,10 +34,7 @@ const LoginForm = () => {
         const emailError = !validateEmail(email);
         const passwordError = !validatePassword(password, email);
     
-    
-        console.log('Email error: ' + emailError);
-        console.log('Password error: ' + passwordError);
-    
+  
         setErrors({
           email: emailError,
           password: passwordError,
@@ -65,7 +63,7 @@ const LoginForm = () => {
     
       const onChange = (name, event) => {
         const value = event.target.value;
-        const loginData = Object.assign({},state.loginData)
+        const loginData = Object.assign({} , state.loginData)
         loginData[name] = value
         setState({
           loginData: loginData
@@ -75,7 +73,7 @@ const LoginForm = () => {
 
   return (
     <>
-      <Styleslo />
+    <div className="bg">
       <div className="container_login">
         <div className="form_login">
           <Title />
@@ -90,17 +88,12 @@ const LoginForm = () => {
               onChange={onChange}
               error={errors.email}
               value={state.loginData.email}
+              id="input_email"
             />
+            <span id="icon_error_email" className="icon_error"><ErrorOutlineIcon/></span>
+            <span id="icon_OK_email" className="icon_check"><CheckCircleOutlineIcon /></span>
+            <p id="emailError"></p>
 
-            {errors.email && (
-              <span
-                id="error_email"
-                className="text-danger text-small d-block mb-2"
-              >
-                <ErrorOutlineIcon />
-                Ingrese un email v&aacute;lido
-              </span>
-            )}
           </div>
           <label className="form_login__label">Contraseña</label>
           <div className="form_login__container">
@@ -115,13 +108,12 @@ const LoginForm = () => {
               onChange={onChange}
               error={errors.password}
               value={state.loginData.password}
+              id="input_password"
             />
-            {errors.password && (
-              <span className="text-danger text-small d-block mb-2">
-                <ErrorOutlineIcon className="error_email" />
-                Ingrese una contraseña v&aacute;lida
-              </span>
-            )}
+            <span id="icon_error_password" className="icon_error"><ErrorOutlineIcon/></span>
+            <span id="icon_OK_password" className="icon_check"><CheckCircleOutlineIcon /></span>
+             <p id="passwordError"></p>
+
           </div>
         </div>
         <div className="position_question_login">
@@ -138,6 +130,7 @@ const LoginForm = () => {
             </a>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

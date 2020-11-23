@@ -1,5 +1,4 @@
 import React from 'react';
-import Stylespar from './stylepa';
 import './style.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
@@ -10,8 +9,7 @@ export default function RecoveryForm() {
 
   return (
      <>
-     <Stylespar/>
-
+  <div className="bg">
      <div className="container_recovery">
 
       <div className="form_recovery">
@@ -32,7 +30,7 @@ export default function RecoveryForm() {
 
  
     </div>
-
+</div>
       </>
   );
 }

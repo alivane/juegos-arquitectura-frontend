@@ -14,7 +14,7 @@ return(
     </div>
    
     <div className="container_title_login__word2">
-    <p className="title_login__word2">SESION</p>
+    <p className="title_login__word2">SESI&Oacute;N</p>
     </div>
   <div className="line_login__2"></div>
 

@@ -11,9 +11,9 @@ export default function RankForm() {
         <div className="container_rank">
           <div className="container_rank_2">
             <img src="img_logro.png" className="img_rank" alt="" />
-            <ProgressBar striped variant="success" now={50} className="bar_progress" animated="true" />
+            <ProgressBar striped variant="success" now={80} className="bar_progress" animated="true" />
             <div className="puntaje_rank">
-              <h2 className="puntaje_rank_1">50</h2>
+              <h2 className="puntaje_rank_1">80</h2>
               <h2 className="puntaje_rank_1">/</h2>
               <h2 className="puntaje_rank_1">100</h2>
             </div>

@@ -3,7 +3,7 @@ import './stylepro.css';
 import OptionsGame from '../../components/OptionsGame'
 
 
-export default function Woman(){
+const Woman = ()  =>{
 
     return (
       <>
@@ -54,3 +54,5 @@ export default function Woman(){
       </>
     );
 }
+
+export default Woman;

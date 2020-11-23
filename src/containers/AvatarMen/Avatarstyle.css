@@ -23,9 +23,14 @@ align-items: center;
 .boton_avatar:focus{
     outline: none;
 }
-.avatar_principal{
+
+.cc{
+    border: 2px solid black;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .cascos_cambio{
     width: 80%;
@@ -79,15 +84,34 @@ align-items: center;
     color:white;
 }
 .container_avatar_a{
-    border: 1px solid aqua;
     width: 20%;
     height: 50%;
     text-align: center;
+    border: 6px solid #ff0000;
+    border-radius: 40%;
+
+
+}
+.avatar_principal{
+    width: 100%;
+    height: 100%;
+    color:white;
+}
+.cambios_avatars{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+}
+.casco_cambio{
+    position: absolute;
+    width: 9%;
+    top: 0;
+
 }
 #avatar_cambio_a{
     width: 100%;
     height: 100%;
-    outline: 6px solid #ff0000;
     cursor: pointer;
 }
 .avatar_cambio_a_a{
@@ -98,8 +122,8 @@ align-items: center;
 #avatar_cambio_b{
     width: 100%;
     height: 100%;
-    outline: 6px solid #ff0000;
     cursor: pointer;
+
 }
 .avatar_cambio_b_b{
     width: 100%;
@@ -108,8 +132,8 @@ align-items: center;
 }#avatar_cambio_c{
     width: 100%;
     height: 100%;
-    outline: 6px solid #ff0000;
     cursor: pointer;
+
 }
 .avatar_cambio_c_c{
     width: 100%;
@@ -119,8 +143,8 @@ align-items: center;
 #avatar_cambio_d{
     width: 100%;
     height: 100%;
-    outline: 6px solid #ff0000;
     cursor: pointer;
+
 }
 .avatar_cambio_d_d{
     width: 100%;
@@ -132,6 +156,7 @@ align-items: center;
     opacity: 0.5;
 
 }
+
 .avatar_cambio_b{
     width: 100%;
     height: 100%;
@@ -197,6 +222,7 @@ align-items: center;
     .candado{
         transform: scale(0.5);
     }
+  
 }
 @media screen and (max-width:500px){
     .container_option_avatar{

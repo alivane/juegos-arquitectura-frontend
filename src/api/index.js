@@ -26,3 +26,19 @@ export function register(usuario) {
     });
 
 }
+
+export function update(usuario) {
+    return fetch('https://buildsign-backend.herokuapp.com/users/<id>', {
+        method: 'PUT',
+        body: JSON.stringify({
+            name: usuario.name,
+            mail: usuario.email,
+            password: usuario.password,
+            gender: usuario.gender
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+}

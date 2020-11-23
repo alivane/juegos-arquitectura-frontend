@@ -5,12 +5,12 @@ import Title from './title';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
-import Stylesre from './styre';
 import { register } from '../../api';
-import { validatePassword, validateEmail, isEmpty } from '../../utils/validations';
+import { validatePassword, validateEmail,validateName } from '../../utils/validations';
 import InputLineRegister from '../../components/InputLineRegister';
 import SwitchSex from './Switchsex';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 
 const RegisterForm = () => {
   const history = useHistory()
@@ -41,7 +41,7 @@ const RegisterForm = () => {
       email,
       password,
     } = state.registerData;
-    const nameError = isEmpty(name);
+    const nameError = !validateName(name);
     const emailError = !validateEmail(email);
     const passwordError = !validatePassword(password, email);
 
@@ -74,15 +74,8 @@ const RegisterForm = () => {
         if (!response.ok) {
           throw Error(response.statusText);
         }
-        if(gender===1){
-          history.push('/profilewoman');
-        }
-        if(gender===0){
-          history.push('/profilemen');
-        }
       })
       .catch(err => {
-        
         alert('Usuario no se registro correctamente');
       });
 
@@ -105,8 +98,7 @@ const RegisterForm = () => {
 
   return (
     <>
-      <Stylesre />
-
+  <div className="bg">
       <div className="container_register">
         <div className="form_register">
           <Title />
@@ -119,18 +111,15 @@ const RegisterForm = () => {
               required={true}
               onChange={onChange}
               error={errors.name}
-              id="name"
               value={state.registerData.name}
             />
-                {
-    errors.email && <span className="text-danger text-small d-block mb-2">
-    <ErrorOutlineIcon />
-    Ingrese un nombre de usuario v&aacute;lido
-    </span>
-      }
+
+        <span id="icon_error_name" className="icon_error"><ErrorOutlineIcon/></span>
+            <span id="icon_OK_name" className="icon_check"><CheckCircleOutlineIcon /></span>
+            <p id="nameError"></p>
 
           </div>
-          <label className="form_register__label">Correo</label>
+          <label className="form_register__label" >Correo</label>
           <div className="form_register__container">
             <EmailIcon className="form_register__container-icon" />
             <InputLineRegister
@@ -139,17 +128,17 @@ const RegisterForm = () => {
               required={true}
               onChange={onChange}
               error={errors.email}
-              id="email"
               value={state.registerData.email}              
             />
-            {
-    errors.email && <span className="text-danger text-small d-block mb-2">
-    <ErrorOutlineIcon />
-    Ingrese un email v&aacute;lido
-    </span>
-      }
+      
+      <span id="icon_error_email" className="icon_error"><ErrorOutlineIcon/></span>
+            <span id="icon_OK_email" className="icon_check"><CheckCircleOutlineIcon /></span>
+            <p id="emailError"></p>
           </div>
-          <label className="form_register__label">Contraseña</label>
+       
+        </div>
+        <div className="position_question_register">
+        <label className="form_register__label_2">Contraseña</label>
           <div className="form_register__container">
             <LockIcon className="form_register__container-icon" />
             <InputLineRegister
@@ -160,18 +149,12 @@ const RegisterForm = () => {
               maxLength={8}
               onChange={onChange}
               error={errors.password}
-              id="password"
               value={state.registerData.password}
             />
-            {
-    errors.email && <span className="text-danger text-small d-block mb-2">
-    <ErrorOutlineIcon />
-    Ingrese una contraseña v&aacute;lida
-    </span>
-      }
+                 <span id="icon_error_password" className="icon_error"><ErrorOutlineIcon/></span>
+            <span id="icon_OK_password" className="icon_check"><CheckCircleOutlineIcon /></span>
+             <p id="passwordError"></p>
           </div>
-        </div>
-        <div className="position_question_register">
           <SwitchSex handleChange={handleStateGenderChange} state={stateGender} id="gender" />
           <button
             className="form_register__a-register"
@@ -180,12 +163,13 @@ const RegisterForm = () => {
             Registrar
           </button>
           <div className="question_register_container">
-            <p className="question_register_1">¿Ya estas registrado?</p>
+            <p className="question_register_1">¿Ya estás registrado?</p>
             <a href="login" className="question_register_2">
               Ingresar
             </a>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

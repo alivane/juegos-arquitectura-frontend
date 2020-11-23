@@ -16,7 +16,8 @@ const InputLineLogin = (props) => {
     error,
     value,
     onClick,
-    title
+    title,
+    
   } = props;
 
 

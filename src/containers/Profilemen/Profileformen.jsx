@@ -1,8 +1,8 @@
 import React from "react";
 import './stylepromen.css';
 import OptionsGame from '../../components/OptionsGame'
-
-export default function ProfileMen(){
+import { update } from '../../api';
+const ProfileMen = (props) =>{
 
     return (
       <>
@@ -10,14 +10,15 @@ export default function ProfileMen(){
           <div className="container_1">
             <div className="uno">
               <img src="myAvatarMen.png" alt="" className="img_uno" />
-              <a href="login" className="uno_3">
+              <a href="avatarmen" className="uno_3">
                 CAMBIAR FOTO
               </a>
             </div>
 
             <div className="dos">
               <div className="dos_container">
-                <input type="text" className="doss" />
+              {}
+                <input type="text" className="doss"/>
                 <label htmlFor="" className="dosss">
                   Cambiar Nombre
                 </label>
@@ -52,3 +53,5 @@ export default function ProfileMen(){
       </>
     );
 }
+
+export default ProfileMen;
