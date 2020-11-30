@@ -1,5 +1,4 @@
 import React from 'react';
-import StylesNotpar from './StyleNot';
 import './style.css';
 
 /*
@@ -12,7 +11,7 @@ import {faBell} from '@fortawesome/free-solid-svg-icons';
 export default function NotFoundForm(){
     return (
       <>
-        <StylesNotpar />
+      <div className="bg">
         <div className="container_notfound">
           <img
             src="/arquitecto.png"
@@ -26,6 +25,7 @@ export default function NotFoundForm(){
               Volver al Home{" "}
             </a>
           </div>
+        </div>
         </div>
       </>
     );

@@ -16,15 +16,6 @@
      
 }
 
-#tsparticles_register {
-       position: absolute;
-       width: 100%;
-       height: 100%;
-       background-image: url(https://allegra.flowersetcfresno.com/pic/1015789_full-fondo-de-pantalla-negro-3840x2160-3840x2160-black-and-blue-abstract-4k-wallpaper-free-4k-wallpaper.jpg);
-       background-size:100vw 100vh;
-  
-       
-   }
 
 .success{
        background: blue;
