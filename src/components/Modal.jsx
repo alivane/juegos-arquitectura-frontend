@@ -7,25 +7,56 @@ import Rating1 from './rating_game';
 
 const ModalGame = (props) => {
 
-    const { state } = props;
+    const {
+        state,
+        value,
+        max,
+        title,
+        to,
+        from,
+        ranking
+    } = props;
 
     return (
         <Modal className="body_modal" isOpen={state.abierto}>
             <ModalHeader className="header_level">
-                <h1 className="header_title">NIVEL COMPLETADO!</h1>
+                {
+                    value <= 1.5 ? (
+                        <h1 className="header_title">VUELVE A INTENTAR</h1>
+                    ) :
+                    (
+                        <h1 className="header_title">NIVEL COMPLETADO!</h1>
+                    )
+                }
             </ModalHeader>
             <ModalBody className="body_level">
                 <div className="container_rating">
                     <span className="sp1">
                         <img src="tercero.png" alt="" className="tercero_img" />
-                        <Rating1 />
+                        <Rating1 
+                            value={value}
+                            max={max}
+                            title={title}
+                            ranking={ranking}
+                        />
                     </span>
                 </div>
             </ModalBody>
             <ModalFooter className="footer_game">
-                <a href="level2" className="next_level">
-                    Siguiente nivel
-                </a>
+                {
+                    value <= 1.5 ? (
+                        <a href={from} className="next_level">
+                            Volver a Intentar
+                        </a>
+                    ) :
+                    (
+                        <a href={to !== "no" ? to : "/optionlevel"} className="next_level">
+                            {
+                                to !== "no" ? "Siguiente nivel" : "Volver al menu"
+                            }
+                        </a>
+                    )
+                }
                 <a href="home" className="buton_out">
                     Salir
                 </a>

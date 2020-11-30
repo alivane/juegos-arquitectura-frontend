@@ -2,55 +2,55 @@ const figures = [{
         'img': 'cuadrado.png',
         'height': 100,
         'width': 100,
-        'price': 700
+        'price': 7500
     },
     {
         'img': 'rectangulo-pasillo.png',
         'height': 100,
         'width': 100,
-        'price': 100
+        'price': 6500
     },
     {
         'img': 'rectangulo-pasillo-2.png',
         'height': 100,
         'width': 100,
-        'price': 150
+        'price': 3000
     },
     {
         'img': 'rectangulo-pasillo-3.png',
         'height': 100,
         'width': 100,
-        'price': 200
+        'price': 8000
     },
     {
         'img': 'rectangulo.png',
         'height': 100,
         'width': 100,
-        'price': 300
+        'price': 5500
     },
     {
         'img': 'rombo.png',
         'height': 100,
         'width': 100,
-        'price': 80
+        'price': 6500
     },
     {
         'img': 'trapecio.png',
         'height': 100,
         'width': 100,
-        'price': 300
+        'price': 10500
     },
     {
         'img': 'triangulo-left.png',
         'height': 100,
         'width': 100,
-        'price': 150
+        'price': 9000
     },
     {
         'img': 'triangulo.png',
         'height': 100,
         'width': 100,
-        'price': 400
+        'price': 8500
     }
 ]
 

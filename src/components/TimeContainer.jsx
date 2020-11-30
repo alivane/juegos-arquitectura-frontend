@@ -2,28 +2,73 @@ import React, { useState } from 'react';
 import ModalGame from './Modal';
 import Timer from './timer';
 
-const TimeContainer = () => {
-    const [state, setState] = useState({
-        abierto: false,
-      })
-    const abrirModal = () => {
-        setState({ abierto: !state.abierto }); // setState : actualizar estado
-      }
+const TimeContainer = (props) => {
+  const {
+    presupuesto, gasto, to, from
+  } = props;
+  const [state, setState] = useState({
+    abierto: false,
+  })
+
+  const [starts, setStarts] = useState(0);
+  const [title, setTitle] = useState("SIGUE MEJORANDO!")
+  const [ranking, setRanking] = useState(0);
+  const [time, setTime] = useState(0);
+
+
+  const abrirModal = () => {
+    setState({ abierto: !state.abierto });
+    const total = parseInt((time / 6) + (presupuesto / (gasto != 0 ? gasto : presupuesto)));
+    const puntos = parseInt((total * 100) / 14);
+
+    setRanking(parseInt(puntos));
+    if (puntos < 24) {
+      setTitle("LO SENTIMOS, SUERTE PARA LA PROXIMA :(");
+      setStarts(1)
+    }
+    if (puntos >= 24 && puntos <= 50) { 
+      setTitle("SIGUE MEJORANDO !"); 
+      setStarts(2);
+    }
+    if (puntos > 50) { 
+      setTitle("FELICITACIONES !!!"); 
+      setStarts(3)
+    }
+  }
+
+  const timerGame = (time_seconds) => {
+    setTime(60-time_seconds);
+    if (time_seconds === 2) abrirModal();
+  }
+
   return (
     <>
-         <div className="time_container">
-          <div className="container_reloj">
-            <a className="bb1" onClick={() => abrirModal()} href>
-              <span className="bb1_span">Finalizar</span>
-            </a>
-            <div className="reloj">
-              <img src="agujaMinutos.png" alt="" id="minutos" />
-              <img src="agujaSegundos.png" alt="" id="segundos" />
-            </div>
-            <Timer />
+      <div className="time_container">
+        <div className="container_reloj">
+          <a className="bb1" href="/optionlevel">
+            <span className="bb1_span">Volver a menu</span>
+          </a>
+          <a className="bb1" onClick={() => abrirModal()} href>
+            <span className="bb1_span">Finalizar</span>
+          </a>
+          <div className="reloj">
+            <img src="agujaMinutos.png" alt="" id="minutos" />
+            <img src="agujaSegundos.png" alt="" id="segundos" />
           </div>
-          <ModalGame state={state} />
+          <Timer 
+            timerGame={timerGame}
+          />
         </div>
+        <ModalGame
+          state={state}
+          value={starts}
+          max={3}
+          title={title}
+          ranking={ranking}
+          to={to}
+          from={from}
+        />
+      </div>
     </>
   );
 }

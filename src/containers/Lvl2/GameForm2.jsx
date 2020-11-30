@@ -21,9 +21,8 @@ const GameForm2 = () => {
   const [shapes, setShapes] = useState([]);
 
   const onClickShape = (e, data) => {
-    console.log(data);
     const price = data[0]['price']* resize;
-    setGasto(price)
+    setGasto(price+gasto);
     setShapes([...shapes, <Shapes data={data} resize={resize} />])
   }
   
@@ -47,7 +46,12 @@ const GameForm2 = () => {
     <>
       <div className="game">
      
-    <TimeContainer/>
+        <TimeContainer 
+          presupuesto={presupuesto}
+          gasto={gasto}
+          to="/game3"
+          from="/game2"
+        />
         <Terreno2 shapes={shapes} />
 
         <div className="piece_container">
@@ -65,7 +69,10 @@ const GameForm2 = () => {
               <p className="total"> TOTAL: {currencyFormat(presupuesto-gasto)}</p>
             </div>
           </div>
-          <ZoneRandom onClickShape={onClickShape}/>
+          {
+              presupuesto-gasto === 0 ? <h1 style={{'color': 'white'}} >Sin presupuesto</h1>  
+              : <ZoneRandom onClickShape={onClickShape}/>
+          }
         </div>
       </div>
     </>
