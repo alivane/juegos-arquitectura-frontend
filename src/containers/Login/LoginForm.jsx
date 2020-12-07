@@ -120,9 +120,9 @@ const LoginForm = () => {
           <button className="form_login__a-login" onClick={doLogin}>
             INICIAR SESIÓN
           </button>
-          <a href="recovery" className="a_question">
+          {/* <a href="recovery" className="a_question">
             ¿Olvidaste tu contraseña?
-          </a>
+          </a> */}
           <div className="question_login">
             <p className="question_login_1">¿NO TIENES CUENTA?</p>
             <a href="register" className="a_question_login">

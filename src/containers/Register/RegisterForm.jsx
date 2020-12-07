@@ -73,6 +73,8 @@ const RegisterForm = () => {
       .then(response => {
         if (!response.ok) {
           throw Error(response.statusText);
+        } else {
+            history.push('/login');
         }
       })
       .catch(err => {
