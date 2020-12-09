@@ -13,10 +13,10 @@ const CoinsForm = () => {
   const [compra3, setCompra3] = useState(0);
   const [compra4, setCompra4] = useState(0);
 
+
   const updateCoins1 = (params) => {
     if (price >= 100 && compra === 0) {
       setPrice(price - 100);
-      setUnlock(1);
       setCompra(1);
     } else {
       alert("No tienes Coins suficientes para comprar el casco gris");
@@ -26,7 +26,6 @@ const CoinsForm = () => {
   const updateCoins2 = (params) => {
     if (price >= 500) {
       setPrice(price - 500);
-      setUnlock2(1);
       setCompra2(1);
 
     } else {
@@ -36,7 +35,6 @@ const CoinsForm = () => {
   const updateCoins3 = (params) => {
     if (price >= 1000) {
       setPrice(price - 1000);
-      setUnlock3(1);
       setCompra3(1);
 
     } else {
@@ -46,7 +44,6 @@ const CoinsForm = () => {
   const updateCoins4 = (params) => {
     if (price >= 5000) {
       setPrice(price - 5000);
-      setUnlock4(1);
       setCompra4(1);
 
     } else {
@@ -54,10 +51,7 @@ const CoinsForm = () => {
     }
   };
 
-  const [unlock, setUnlock] = useState(0);
-  const [unlock2, setUnlock2] = useState(0);
-  const [unlock3, setUnlock3] = useState(0);
-  const [unlock4, setUnlock4] = useState(0);
+
 
   return (
     <>
@@ -68,7 +62,7 @@ const CoinsForm = () => {
             <div className="icon_coin">
               <div className="container_icon_coin">
               {
-                unlock === 0 ?
+                compra === 0 ?
                 
                 <Fragment>
                 <LockIcon className="candado_coin" />
@@ -86,7 +80,7 @@ const CoinsForm = () => {
 
               <div className="container_icon_coin">
               {
-                unlock2 === 0 ?
+                compra2 === 0 ?
                 
                 <Fragment>
                 <LockIcon className="candado_coin" />
@@ -100,7 +94,7 @@ const CoinsForm = () => {
               </div>
               <div className="container_icon_coin">
               {
-                unlock3 === 0 ?
+                compra3 === 0 ?
                 
                 <Fragment>
                 <LockIcon className="candado_coin" />
@@ -114,7 +108,7 @@ const CoinsForm = () => {
               </div>
               <div className="container_icon_coin">
               {
-                unlock4 === 0 ?
+                compra4 === 0 ?
                 
                 <Fragment>
                 <LockIcon className="candado_coin" />
