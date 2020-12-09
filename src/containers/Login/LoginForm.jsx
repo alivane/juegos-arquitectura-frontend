@@ -81,6 +81,7 @@ const LoginForm = () => {
           <div className="form_login__container">
             <PersonOutlineIcon className="form_login__container-icon" />
             <InputLineLogin
+            
               name="email"
               label="Correo"
               type="text"
