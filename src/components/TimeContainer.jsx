@@ -18,10 +18,19 @@ const TimeContainer = (props) => {
 
   const abrirModal = () => {
     setState({ abierto: !state.abierto });
-    const total = parseInt((time / 6) + (presupuesto / (gasto != 0 ? gasto : presupuesto)));
-    const puntos = parseInt((total * 100) / 14);
 
+    if(gasto === 0){
+    const puntos = 0;
     setRanking(parseInt(puntos));
+   
+      setTitle("LO SENTIMOS, SUERTE PARA LA PROXIMA :(");
+      setStarts(1)
+    }
+    else if(gasto !== 0 ){
+      const total = parseInt((time / 6) + (presupuesto / (gasto !== 0 ? gasto : presupuesto)));
+      const puntos = parseInt((total * 100) / 14);
+      setRanking(parseInt(puntos));
+      
     if (puntos < 24) {
       setTitle("LO SENTIMOS, SUERTE PARA LA PROXIMA :(");
       setStarts(1)
@@ -34,13 +43,14 @@ const TimeContainer = (props) => {
       setTitle("FELICITACIONES !!!"); 
       setStarts(3)
     }
+    }
   }
+
 
   const timerGame = (time_seconds) => {
-    setTime(60-time_seconds);
+    setTime(60 - time_seconds);
     if (time_seconds === 2) abrirModal();
   }
-
   return (
     <>
       <div className="time_container">
@@ -51,10 +61,7 @@ const TimeContainer = (props) => {
           <a className="bb1" onClick={() => abrirModal()} href>
             <span className="bb1_span">Finalizar</span>
           </a>
-          <div className="reloj">
-            <img src="agujaMinutos.png" alt="" id="minutos" />
-            <img src="agujaSegundos.png" alt="" id="segundos" />
-          </div>
+        
           <Timer 
             timerGame={timerGame}
           />

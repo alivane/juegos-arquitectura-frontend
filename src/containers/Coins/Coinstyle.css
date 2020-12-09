@@ -27,15 +27,30 @@
     line-height: 50px;
  
 }
-.candado{
-    position: absolute;
-    width:20px ;
-    height: 20px;
+.casco_cambio_1{
+    color: grey;
+    transform: scale(4);
 }
-.casco{
-    width: 100px;
-    height: 100px;
+.casco_cambio_2{
+    color: yellow;
+    transform: scale(4);
 
+}
+.casco_cambio_3{
+    color: blue;
+        transform: scale(4);
+
+}
+.casco_cambio_4{
+    color: white;
+        transform: scale(4);
+
+}
+.candado_coin{
+    color: transparent;
+    stroke:  black;
+    position: absolute;
+    z-index: 10000;
 }
 .icon_coin{
     display: grid;
@@ -107,15 +122,23 @@
         .container_coin_2{
             grid-column-gap: 20px;
     }
-    .candado{
-        width:10px ;
-        height: 10px;
+    .casco_cambio_1{
+        transform: scale(2);
     }
-    .casco{
-        width: 50px;
-        height: 50px;
-    
+    .casco_cambio_2{
+        transform: scale(2);
     }
+    .casco_cambio_3{
+        transform: scale(2);
+
+}
+.casco_cambio_4{
+        transform: scale(2);
+
+}
+.candado_coin{
+    transform: scale(0.5);
+}
     .price_coin_2{
         font-size: 10px;
     
@@ -153,15 +176,23 @@
         line-height: 20px;
      
     }
-    .candado{
-        width:10px ;
-        height: 10px;
+    .casco_cambio_1{
+        transform: scale(1.5);
     }
-    .casco{
-        width: 30px;
-        height: 30px;
-    
+    .casco_cambio_2{
+        transform: scale(1.5);
     }
+    .casco_cambio_3{
+        transform: scale(1.5);
+
+}
+.casco_cambio_4{
+        transform: scale(1.5);
+
+}
+.candado_coin{
+    transform: scale(0.3);
+}
     .boton_coin{
         height: 35%;
         font-size: 12px;

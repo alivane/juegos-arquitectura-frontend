@@ -32,7 +32,6 @@ const ModalGame = (props) => {
             <ModalBody className="body_level">
                 <div className="container_rating">
                     <span className="sp1">
-                        <img src="tercero.png" alt="" className="tercero_img" />
                         <Rating1 
                             value={value}
                             max={max}

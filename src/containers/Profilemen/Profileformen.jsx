@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import './stylepromen.css';
 import OptionsGame from '../../components/OptionsGame'
-import { token, avatars_all } from '../../api';
+import { token, avatars_all ,helmets_all, update_user} from '../../api';
 
 const ProfileMen = (props) =>{
 
   const [name, setName] = useState("");
   const [pathAvatar, setPathAvatar] = useState("");
+  const [pathCasco, setPathCasco] = useState("");
+
   const gender = localStorage.getItem('gender');
   const user = JSON.parse(localStorage.getItem('user'))
+  const token_item = `Bearer ${localStorage.getItem('token', token)}`;
+
 
 
   const onChangeName = (e) => {
@@ -17,7 +21,6 @@ const ProfileMen = (props) =>{
   }
   
   useEffect(() => {
-    const token_item = `Bearer ${localStorage.getItem('token', token)}`;
     setName(user['name'])
     avatars_all(token_item, gender)
     .then(response => {
@@ -27,13 +30,41 @@ const ProfileMen = (props) =>{
       return response.text();
     })
     .then(data => {
+      console.log(data)
       const avatars = JSON.parse(data);
       for (let i=0; i<avatars.length; i++) {
         if (avatars[i]['id'] === user['id_avatar']) setPathAvatar(avatars[i]['path_image'])
       }
     })
-  }, []);
-  
+   
+    
+}, []);
+
+const onClickAvatar = () => {
+
+
+  const userUpdate = {
+    "name": name,
+    "mail": user['mail'],
+    "gender": user['gender'],
+    "coins": user['coins'],
+    "id_avatar": user['id_avatar'],
+    "id_helmet": user['id_helmet']
+  }
+  const data = {...user, ...userUpdate};
+  localStorage.setItem('user', JSON.stringify(data));
+
+  update_user(token_item, userUpdate, user['id'])
+    .then(response => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      } else {
+        alert("Cambio correctamente")
+      }
+      return response.text();
+    })
+}
+
     return (
       <>
         <div className="container_game">
@@ -42,7 +73,7 @@ const ProfileMen = (props) =>{
             <img src={pathAvatar} alt="" className="img_uno" />
 
               <a href="avatarmen" className="uno_3">
-                CAMBIAR FOTO
+                CAMBIAR AVATAR
               </a>
             </div>
 
@@ -53,6 +84,8 @@ const ProfileMen = (props) =>{
                 <label htmlFor="" className="dosss">
                   Cambiar Nombre
                 </label>
+                
+
                 <div className="doss1">
                   $100.000
                   <img src="moneda2.ico" alt="moneda" className="money_icon" />
@@ -62,21 +95,9 @@ const ProfileMen = (props) =>{
                 <div className="dosss">Rango</div>
               </div>
             </div>
-            <div className="tres">
-              <a href="previous" className="box2">
-                &lt;
-              </a>
-              <div className="box"></div>
-              <div className="box"></div>
-              <div className="box"></div>
-              <a href="next" className="box2">
-                &gt;
-              </a>
-              <a href="projects" className="mis">
-                {" "}
-                MIS PROYECTOS
-              </a>
-            </div>
+            <div className="boton_actualizar">
+              <button className="actualizar" onClick={onClickAvatar}>Actualizar Perfil</button>  
+              </div>            
           </div>
 
           <OptionsGame/>

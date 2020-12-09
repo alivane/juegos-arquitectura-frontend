@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import "../Profilemen/stylepromen.css";
 import OptionsGame from "../../components/OptionsGame";
 import "./Coinstyle.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHardHat } from "@fortawesome/free-solid-svg-icons";
 import LockIcon from "@material-ui/icons/Lock";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 const CoinsForm = () => {
   const [price, setPrice] = useState(500);
@@ -68,33 +67,64 @@ const CoinsForm = () => {
             <h1 className="price_coin">${price}</h1>
             <div className="icon_coin">
               <div className="container_icon_coin">
-                <img
-                  src={unlock === 0 ? "lock1.png" : "gris 2.png"}
-                  alt=""
-                  className="casco"
-                />
+              {
+                unlock === 0 ?
+                
+                <Fragment>
+                <LockIcon className="candado_coin" />
+                <FontAwesomeIcon icon={faHardHat} className="casco_cambio_1" />
+                </Fragment>
+                
+                :     
+                 <FontAwesomeIcon icon={faHardHat} className="casco_cambio_1" />
+  
+              }
+
+              
+              
               </div>
 
               <div className="container_icon_coin">
-                <img
-                  src={unlock2 === 0 ? "lock2.png" : "amarillo 1.png"}
-                  alt=""
-                  className="casco"
-                />
+              {
+                unlock2 === 0 ?
+                
+                <Fragment>
+                <LockIcon className="candado_coin" />
+                <FontAwesomeIcon icon={faHardHat} className="casco_cambio_2" />
+                </Fragment>
+                
+                :     
+                 <FontAwesomeIcon icon={faHardHat} className="casco_cambio_2" />
+  
+              }
               </div>
               <div className="container_icon_coin">
-                <img
-                  src={unlock3 === 0 ? "lock3.png" : "azul 1.png"}
-                  alt=""
-                  className="casco"
-                />
+              {
+                unlock3 === 0 ?
+                
+                <Fragment>
+                <LockIcon className="candado_coin" />
+                <FontAwesomeIcon icon={faHardHat} className="casco_cambio_3" />
+                </Fragment>
+                
+                :     
+                 <FontAwesomeIcon icon={faHardHat} className="casco_cambio_3" />
+  
+              }
               </div>
               <div className="container_icon_coin">
-                <img
-                  src={unlock4 === 0 ? "lock4.png" : "blanco 1.png"}
-                  alt=""
-                  className="casco"
-                />
+              {
+                unlock4 === 0 ?
+                
+                <Fragment>
+                <LockIcon className="candado_coin" />
+                <FontAwesomeIcon icon={faHardHat} className="casco_cambio_4" />
+                </Fragment>
+                
+                :     
+                 <FontAwesomeIcon icon={faHardHat} className="casco_cambio_4" />
+  
+              }
               </div>
             </div>
             <div className="container_title_coin">

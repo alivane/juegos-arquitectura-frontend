@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import './OptionLevel.css';
 import LockIcon from "@material-ui/icons/Lock";
 import { token, levels_all } from '../../api';
 
-
 export default function OptionLevel() {
-  const history = useHistory();
+  // const history = useHistory();
   const [levels_unlock, setLevelsUnlock] = useState([]);
   const [levels, setLevels] = useState([]);
   const [gender, setGender] = useState(0);
@@ -24,8 +23,10 @@ export default function OptionLevel() {
       .then(data => {
         localStorage.setItem('user', data)
         const data_user = JSON.parse(data);
+        localStorage.setItem('gender',data_user['gender'])
         setGender(data_user['gender']);
         setLevelsUnlock(data_user['levels'])
+        console.log(data)
       })
 
       levels_all(token_item)
@@ -40,7 +41,6 @@ export default function OptionLevel() {
         setLevels(levels_parse);
       })
   }, [])
-
 
   return (
     <>
