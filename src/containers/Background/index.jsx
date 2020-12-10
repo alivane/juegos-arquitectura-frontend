@@ -1,10 +1,9 @@
-import React from 'react';
+import React from "react";
 import Particles from "react-tsparticles";
 
 export default class Stylespar extends React.Component {
   render() {
     return (
-     
       <Particles
         id="tsparticles"
         options={{
@@ -14,21 +13,21 @@ export default class Stylespar extends React.Component {
               value: 5,
               density: {
                 enable: true,
-                value_area: 10 * 10 * 2
-              }
+                value_area: 10 * 10 * 2,
+              },
             },
             color: {
-              value: "random"
+              value: "random",
             },
             shape: {
               type: "circle",
               stroke: {
                 width: 2,
-                color: "#000"
+                color: "#000",
               },
               polygon: {
-                nb_sides: 5
-              }
+                nb_sides: 5,
+              },
             },
             opacity: {
               value: 1,
@@ -37,8 +36,8 @@ export default class Stylespar extends React.Component {
                 enable: false,
                 speed: 1,
                 opacity_min: 0.1,
-                sync: false
-              }
+                sync: false,
+              },
             },
             size: {
               value: 5,
@@ -47,15 +46,15 @@ export default class Stylespar extends React.Component {
                 enable: true,
                 speed: 40,
                 size_min: 0.1,
-                sync: false
-              }
+                sync: false,
+              },
             },
             line_linked: {
               enable: true,
               distance: 150,
               color: "random",
               opacity: 8,
-              width: 2
+              width: 2,
             },
             move: {
               enable: true,
@@ -68,50 +67,50 @@ export default class Stylespar extends React.Component {
               attract: {
                 enable: false,
                 rotateX: 600,
-                rotateY: 1200
-              }
-            }
+                rotateY: 1200,
+              },
+            },
           },
           interactivity: {
             detect_on: "canvas",
             events: {
               onhover: {
                 enable: true,
-                mode: "grab"
+                mode: "grab",
               },
               onclick: {
                 enable: true,
-                mode: "push"
+                mode: "push",
               },
-              resize: true
+              resize: true,
             },
             modes: {
               grab: {
                 distance: 140,
                 line_linked: {
-                  opacity: 1
-                }
+                  opacity: 1,
+                },
               },
               bubble: {
                 distance: 400,
                 size: 40,
                 duration: 2,
                 opacity: 1,
-                speed: 3
+                speed: 3,
               },
               repulse: {
                 distance: 200,
-                duration: 0.4
+                duration: 0.4,
               },
               push: {
-                particles_nb: 2
+                particles_nb: 2,
               },
               remove: {
-                particles_nb: 1
-              }
-            }
+                particles_nb: 1,
+              },
+            },
           },
-          retina_detect: true
+          retina_detect: true,
         }}
       />
     );

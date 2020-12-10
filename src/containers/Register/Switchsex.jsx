@@ -1,12 +1,9 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import FormGroup from '@material-ui/core/FormGroup';
-import Switch from '@material-ui/core/Switch';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-
-
-
+import React from "react";
+import { withStyles } from "@material-ui/core/styles";
+import FormGroup from "@material-ui/core/FormGroup";
+import Switch from "@material-ui/core/Switch";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 
 const AntSwitch = withStyles((theme) => ({
   root: {
@@ -43,22 +40,29 @@ const AntSwitch = withStyles((theme) => ({
 }))(Switch);
 
 const Sw = (props) => {
-  
   const { state, handleChange } = props;
 
   return (
     <FormGroup className="label1_1">
       <Typography component="div">
         <Grid component="label" container alignItems="center" spacing={1}>
-          <Grid item className="l_men">Masculino</Grid>
-          <Grid item>
-            <AntSwitch checked={state.gender} onChange={handleChange} name="gender" />
+          <Grid item className="l_men">
+            Masculino
           </Grid>
-          <Grid item className="l_woman">Femenino</Grid>
+          <Grid item>
+            <AntSwitch
+              checked={state.gender}
+              onChange={handleChange}
+              name="gender"
+            />
+          </Grid>
+          <Grid item className="l_woman">
+            Femenino
+          </Grid>
         </Grid>
       </Typography>
     </FormGroup>
   );
-}
+};
 
 export default Sw;

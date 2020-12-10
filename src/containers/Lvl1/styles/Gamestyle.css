@@ -305,6 +305,7 @@
 .body_level {
     align-self: center;
     justify-content: center;
+    margin-top:-30px ;
 }
 
 .rating_title {
@@ -384,7 +385,6 @@
     padding: 0.5em 0.5em;
     box-sizing: border-box;
     border-radius: 10%;
-    width: 140px;
     text-align: center;
     color: white;
     font-weight: 900;

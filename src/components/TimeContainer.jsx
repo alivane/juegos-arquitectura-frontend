@@ -56,7 +56,7 @@ const TimeContainer = (props) => {
       <div className="time_container">
         <div className="container_reloj">
           <a className="bb1" href="/optionlevel">
-            <span className="bb1_span">Volver a menu</span>
+            <span className="bb1_span">Volver a men&uacute;</span>
           </a>
           <a className="bb1" onClick={() => abrirModal()} href>
             <span className="bb1_span">Finalizar</span>

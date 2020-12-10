@@ -13,7 +13,6 @@ const CoinsForm = () => {
   const [compra3, setCompra3] = useState(0);
   const [compra4, setCompra4] = useState(0);
 
-
   const updateCoins1 = (params) => {
     if (price >= 100 && compra === 0) {
       setPrice(price - 100);
@@ -27,7 +26,6 @@ const CoinsForm = () => {
     if (price >= 500) {
       setPrice(price - 500);
       setCompra2(1);
-
     } else {
       alert("No tienes Coins suficientes para comprar el casco amarillo");
     }
@@ -36,7 +34,6 @@ const CoinsForm = () => {
     if (price >= 1000) {
       setPrice(price - 1000);
       setCompra3(1);
-
     } else {
       alert("No tienes Coins suficientes para comprar el casco azul");
     }
@@ -45,13 +42,10 @@ const CoinsForm = () => {
     if (price >= 5000) {
       setPrice(price - 5000);
       setCompra4(1);
-
     } else {
       alert("No tienes Coins suficientes para comprar el casco blanco");
     }
   };
-
-
 
   return (
     <>
@@ -61,64 +55,69 @@ const CoinsForm = () => {
             <h1 className="price_coin">${price}</h1>
             <div className="icon_coin">
               <div className="container_icon_coin">
-              {
-                compra === 0 ?
-                
-                <Fragment>
-                <LockIcon className="candado_coin" />
-                <FontAwesomeIcon icon={faHardHat} className="casco_cambio_1" />
-                </Fragment>
-                
-                :     
-                 <FontAwesomeIcon icon={faHardHat} className="casco_cambio_1" />
-  
-              }
-
-              
-              
+                {compra === 0 ? (
+                  <Fragment>
+                    <LockIcon className="candado_coin" />
+                    <FontAwesomeIcon
+                      icon={faHardHat}
+                      className="casco_cambio_1"
+                    />
+                  </Fragment>
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faHardHat}
+                    className="casco_cambio_1"
+                  />
+                )}
               </div>
 
               <div className="container_icon_coin">
-              {
-                compra2 === 0 ?
-                
-                <Fragment>
-                <LockIcon className="candado_coin" />
-                <FontAwesomeIcon icon={faHardHat} className="casco_cambio_2" />
-                </Fragment>
-                
-                :     
-                 <FontAwesomeIcon icon={faHardHat} className="casco_cambio_2" />
-  
-              }
+                {compra2 === 0 ? (
+                  <Fragment>
+                    <LockIcon className="candado_coin" />
+                    <FontAwesomeIcon
+                      icon={faHardHat}
+                      className="casco_cambio_2"
+                    />
+                  </Fragment>
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faHardHat}
+                    className="casco_cambio_2"
+                  />
+                )}
               </div>
               <div className="container_icon_coin">
-              {
-                compra3 === 0 ?
-                
-                <Fragment>
-                <LockIcon className="candado_coin" />
-                <FontAwesomeIcon icon={faHardHat} className="casco_cambio_3" />
-                </Fragment>
-                
-                :     
-                 <FontAwesomeIcon icon={faHardHat} className="casco_cambio_3" />
-  
-              }
+                {compra3 === 0 ? (
+                  <Fragment>
+                    <LockIcon className="candado_coin" />
+                    <FontAwesomeIcon
+                      icon={faHardHat}
+                      className="casco_cambio_3"
+                    />
+                  </Fragment>
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faHardHat}
+                    className="casco_cambio_3"
+                  />
+                )}
               </div>
               <div className="container_icon_coin">
-              {
-                compra4 === 0 ?
-                
-                <Fragment>
-                <LockIcon className="candado_coin" />
-                <FontAwesomeIcon icon={faHardHat} className="casco_cambio_4" />
-                </Fragment>
-                
-                :     
-                 <FontAwesomeIcon icon={faHardHat} className="casco_cambio_4" />
-  
-              }
+                {compra4 === 0 ? (
+                  <Fragment>
+                    <LockIcon className="candado_coin" />
+                    <FontAwesomeIcon
+                      icon={faHardHat}
+                      className="casco_cambio_4"
+                    />
+                  </Fragment>
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faHardHat}
+                    className="casco_cambio_4"
+                  />
+                )}
               </div>
             </div>
             <div className="container_title_coin">

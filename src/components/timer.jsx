@@ -38,7 +38,7 @@ export default class Timer extends Component {
         return (
             <div className="tt1">
                 { minutes === 0 && seconds === 0
-                    ? <h1 className="tt1_1">Se acabo el tiempo    !</h1>
+                    ? <h1 className="tt1_1">Se acabó el tiempo    !</h1>
                     : <h1 className="tt1_1_1">{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
                 }
             </div>

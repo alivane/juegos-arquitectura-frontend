@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import {useStyles} from "./style";
-import  Title from './title';
-import './style.css';
+import { useStyles } from "./style";
+import Title from "./title";
+import "./style.css";
 export default function HomeForm() {
   const classes = useStyles();
 

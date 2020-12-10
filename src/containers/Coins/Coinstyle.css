@@ -81,6 +81,12 @@
     align-items: center;
     justify-content: center;
 }
+.adquirir{
+    color: rgb(255,255,255);
+    font-weight: bold;
+    font-size: 30px;
+
+}
 
 .boton_coin{
     height: 30%;
@@ -109,9 +115,7 @@
     -webkit-text-stroke: 2px #ff0000;
 }
 
-.adquirir{
-    color: rgb(255,255,255)
-}
+
 @media screen and (max-width:850px){
     .price_coin{
         width: 50%;
@@ -161,6 +165,9 @@
         font-size: 25px;
         -webkit-text-stroke: 1px #ff0000;
     }
+    .adquirir{
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-width:500px){
@@ -198,6 +205,8 @@
         font-size: 12px;
     }
 
-
+    .adquirir{
+        font-size: 15px;
+    }
    
 }

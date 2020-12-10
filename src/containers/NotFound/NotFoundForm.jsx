@@ -1,5 +1,5 @@
-import React from 'react';
-import './style.css';
+import React from "react";
+import "./style.css";
 
 /*
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -8,9 +8,9 @@ import {faBell} from '@fortawesome/free-solid-svg-icons';
 
 */
 
-export default function NotFoundForm(){
-    return (
-      <>
+export default function NotFoundForm() {
+  return (
+    <>
       <div className="bg">
         <div className="container_notfound">
           <img
@@ -26,7 +26,7 @@ export default function NotFoundForm(){
             </a>
           </div>
         </div>
-        </div>
-      </>
-    );
+      </div>
+    </>
+  );
 }
