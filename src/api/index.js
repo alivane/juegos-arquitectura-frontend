@@ -52,6 +52,33 @@ export function update_user(token, usuario, id) {
 
 }
 
+export function helmets_by_user_register(data) {
+    return fetch(`${api}/register`, {
+        method: 'POST',
+        body: JSON.stringify({
+            id_user: data.id_user,
+            id_helmet: data.id_helmet
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+}
+
+export function levels_by_user_register(data) {
+    return fetch(`${api}/register`, {
+        method: 'POST',
+        body: JSON.stringify({
+            id_user: data.id_user,
+            id_level: data.id_level
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+}
 
 export function token(token) {
     return fetch(`${api}/token`, {
@@ -85,6 +112,16 @@ export function avatars_all(token, id_user) {
 
 export function get_avatar(id) {
     return fetch(`${api}/avatar/${id}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": token
+        },
+    });
+}
+
+export function get_helmets_by_user(id) {
+    return fetch(`${api}/helmets_by_user/${id}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
