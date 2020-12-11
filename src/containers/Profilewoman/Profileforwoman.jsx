@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./stylepro.css";
 import OptionsGame from "../../components/OptionsGame";
-import { token, avatars_all, update_user } from "../../api";
+import { token, avatars_all, update_user, helmets_all } from "../../api";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHardHat } from "@fortawesome/free-solid-svg-icons";
 
 const Woman = () => {
   const [name, setName] = useState("");
@@ -9,6 +11,7 @@ const Woman = () => {
   const gender = localStorage.getItem("gender");
   const user = JSON.parse(localStorage.getItem("user"));
   const token_item = `Bearer ${localStorage.getItem("token", token)}`;
+  const [casco, setCasco] = useState([]);
 
   const onChangeName = (e) => {
     const value = e.target.value;
@@ -17,6 +20,20 @@ const Woman = () => {
 
   useEffect(() => {
     setName(user["name"]);
+    helmets_all(token_item)
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response.text();
+      })
+      .then((data) => {
+        const helmets_data = JSON.parse(data);
+        for (let i = 0; i < helmets_data.length; i++) {
+          if (helmets_data[i]["id"] === user["id_helmet"])
+            setCasco(helmets_data[i]);
+        }
+      });
 
     avatars_all(token_item, gender)
       .then((response) => {
@@ -61,6 +78,15 @@ const Woman = () => {
       <div className="container_game">
         <div className="container_1">
           <div className="uno">
+            <div
+              className="container_casco_a"
+            >
+              <FontAwesomeIcon
+                icon={faHardHat}
+                color={casco["path_image"]}
+                className="cascos_cambio_a"
+              />
+            </div>
             <img src={pathAvatar} alt="" className="img_uno_woman" />
 
             <a href="avatarmen" className="uno_3_woman">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../Profilemen/stylepromen.css";
 import "./Avatarstyle.css";
 import OptionsGame from "../../components/OptionsGame";
-// import LockIcon from "@material-ui/icons/Lock";
+import LockIcon from "@material-ui/icons/Lock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHardHat } from "@fortawesome/free-solid-svg-icons";
 import { token, avatars_all, helmets_all, update_user } from "../../api";
@@ -78,19 +78,38 @@ const AvatarMform = (props) => {
         <div className="container_option_avatar">
           <div className="container_casco">
             {helmetsData.map((data, key) => {
-              return (
-                <div
-                  key={key}
-                  className="container_casco_a"
-                  onClick={() => setCasco(data)}
-                >
-                  <FontAwesomeIcon
-                    icon={faHardHat}
-                    color={data["path_image"]}
-                    className="cascos_cambio_a"
-                  />
-                </div>
+              const comprado = user['helmets'].some(
+                  (casco) => casco["id_helmet"] === data["id"]
               );
+              if (comprado) {
+                return (
+                  <div
+                    key={key}
+                    className="container_casco_a"
+                    onClick={() => setCasco(data)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faHardHat}
+                      color={data["path_image"]}
+                      className="cascos_cambio_a"
+                    />
+                  </div>
+                );
+              } else {
+                return (
+                  <div
+                    key={key}
+                    className="container_casco_a"
+                  >
+                    <LockIcon className="candado_coin" />
+                    <FontAwesomeIcon
+                      icon={faHardHat}
+                      color={data["path_image"]}
+                      className="cascos_cambio_a"
+                    />
+                  </div>
+                );
+              }              
             })}
           </div>
           <div className="container_boton">
