@@ -90,7 +90,7 @@ const ProfileMen = (props) => {
             
             <img src={pathAvatar} alt="" className="img_uno" />
 
-            <a href="avatarmen" className="uno_3">
+            <a href="avatars" className="uno_3">
               CAMBIAR AVATAR
             </a>
           </div>

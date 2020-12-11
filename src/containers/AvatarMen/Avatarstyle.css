@@ -16,15 +16,13 @@
     align-items: center;
 }
 
-.boton_avatar {
-    background: rgba(229, 53, 53, .28);
-    color: white;
-    font-size: 20px;
-    outline: 2px solid #70FF00;
-}
-
-.boton_avatar:focus {
-    outline: none;
+.candado_avatar{
+        color: transparent;
+        stroke:  black;
+        position: absolute;
+        z-index: 10000;
+        transform: scale(1.5);
+        
 }
 
 .cc {
@@ -36,10 +34,7 @@
     align-items: center;
 }
 
-.cascos_cambio {
-    width: 80%;
-    height: 80%;
-}
+
 
 .container_avatar {
     display: flex;
@@ -66,40 +61,15 @@
     align-items: center;
 }
 
-.casco_cambio_avatar {
-    position: absolute;
-    justify-self: start;
-    align-self: flex-start;
-    transform: scale(7);
-    color: grey;
-}
 
 .cascos_cambio_a {
     transform: scale(7);
     /* color:grey */
 }
 
-.cascos_cambio_b {
-    transform: scale(7);
-    color: yellow;
-}
-
-.cascos_cambio_c {
-    transform: scale(7);
-    color: blue;
-}
-
-.cascos_cambio_d {
-    transform: scale(7);
-    color: white;
-}
 
 .container_avatar_a {
-    width: 20%;
-    height: 50%;
     text-align: center;
-    border: 6px solid #ff0000;
-    border-radius: 40%;
 }
 
 .avatar_principal {
@@ -120,114 +90,56 @@
     top: 0;
 }
 
-#avatar_cambio_a {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
+
 
 .avatar_cambio_a_a {
-    width: 100%;
+    width: 80%;
     height: 100%;
 }
 
-#avatar_cambio_b {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
+
+
+.boton_avatar{
+    position: relative;
+    background : none;
+    width: 25%;
+    height: 55px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border: none;
 }
 
-.avatar_cambio_b_b {
-    width: 100%;
-    height: 100%;
-}
-
-#avatar_cambio_c {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
-
-.avatar_cambio_c_c {
-    width: 100%;
-    height: 100%;
-}
-
-#avatar_cambio_d {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
-
-.avatar_cambio_d_d {
-    width: 100%;
-    height: 100%;
-}
-
-.avatar_cambio_a:checked {
-    opacity: 0.5;
-}
-
-.avatar_cambio_b {
-    width: 100%;
-    height: 100%;
-    outline: 6px solid #ff0000;
-    cursor: pointer;
-}
-
-.avatar_cambio_c {
-    width: 100%;
-    height: 100%;
-    outline: 6px solid #ff0000;
-    cursor: pointer;
-}
-
-.avatar_cambio_d {
-    width: 100%;
-    height: 100%;
-    outline: 6px solid #ff0000;
-    cursor: pointer;
-}
-
-.candado {
-    transform: scale(1.9);
+.boton_avatar::before{
+    content: "";
     position: absolute;
-    z-index: 10000;
-    color: transparent;
-    stroke: black;
-    background: none;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff0, #000, #ff0, #000, #ff0, #000, #ff0, #000, #ff0, #000);
+    background-size: 400%;
+    transition: 0.5s;
+    animation: animate 20s linear infinite;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
 }
-
-#cambio {
-    display: none;
+.boton_avatar:focus{
+    outline: none;
 }
-
-#cambio_2 {
-    display: none;
-}
-
-#cambio_3 {
-    display: none;
-}
-
-#cambio_4 {
-    display: none;
-}
-
-#cambio:checked+#avatar_cambio_a {
-    opacity: 0.5;
-}
-
-#cambio_2:checked+#avatar_cambio_b {
-    opacity: 0.5;
-}
-
-#cambio_3:checked+#avatar_cambio_c {
-    opacity: 0.5;
-}
-
-#cambio_4:checked+#avatar_cambio_d {
-    opacity: 0.5;
+.boton_avatar-2{
+    position: absolute;
+    background: #0c0c0c;
+    font-size: 25px;
+    font-weight: 900;
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    bottom: 5px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 @media screen and (max-width:850px) {
@@ -237,19 +149,21 @@
     .cascos_cambio_a {
         transform: scale(3);
     }
-    .cascos_cambio_b {
-        transform: scale(3);
-    }
-    .cascos_cambio_c {
-        transform: scale(3);
-    }
-    .cascos_cambio_d {
-        transform: scale(3);
-    }
-    .candado {
-        transform: scale(0.5);
-    }
+
+    .candado_avatar{
+      transform: scale(0.7);
+        
 }
+.avatar_cambio_a_a {
+    width: 60%;
+}
+.container_casco {
+ margin-top: 10px;
+}
+
+
+}
+
 
 @media screen and (max-width:500px) {
     .container_option_avatar {

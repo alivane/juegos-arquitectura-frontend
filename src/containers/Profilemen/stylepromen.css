@@ -190,14 +190,16 @@
     flex-direction: column;
 }
 .box_a_container{
-    background: rgba(0, 255, 148, 0.56);
+    background: rgba(0, 0, 0, 0.56);
     color:white;
-    outline: 3px solid white;
+    border: 5px solid rgb(255,255,0);
     box-sizing: border-box;
+    font-weight: 900;
     padding: 10px 20px;
     width: 100%;
     text-align: center;
     margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .box_a_container:hover{

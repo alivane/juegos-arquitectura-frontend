@@ -78,8 +78,8 @@ const AvatarMform = (props) => {
         <div className="container_option_avatar">
           <div className="container_casco">
             {helmetsData.map((data, key) => {
-              const comprado = user['helmets'].some(
-                  (casco) => casco["id_helmet"] === data["id"]
+              const comprado = user["helmets"].some(
+                (casco) => casco["id_helmet"] === data["id"]
               );
               if (comprado) {
                 return (
@@ -97,11 +97,8 @@ const AvatarMform = (props) => {
                 );
               } else {
                 return (
-                  <div
-                    key={key}
-                    className="container_casco_a"
-                  >
-                    <LockIcon className="candado_coin" />
+                  <div key={key} className="container_casco_a">
+                    <LockIcon className="candado_avatar" />
                     <FontAwesomeIcon
                       icon={faHardHat}
                       color={data["path_image"]}
@@ -109,7 +106,7 @@ const AvatarMform = (props) => {
                     />
                   </div>
                 );
-              }              
+              }
             })}
           </div>
           <div className="container_boton">
@@ -135,7 +132,7 @@ const AvatarMform = (props) => {
               onClick={() => onClickAvatar()}
               id="avatar_but"
             >
-              CAMBIAR AVATAR
+              <span className="boton_avatar-2">CAMBIAR AVATAR</span>
             </button>
           </div>
 

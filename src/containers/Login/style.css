@@ -212,17 +212,22 @@ outline: none;
 
 }
 .a_question_login{
-       color:white;
+       color:rgb(255,255,0);
  
 }
+
 .question_login_1{
        margin-right: 5px;
-       color: white;
+       color:rgb(255,255,255)
+}
+.question_login_2{
+       color: rgb(255,255,0);
+
 }
 
 .a_question_login:hover{
        text-decoration: none;
-       font-weight: 900;
+       color: rgb(255,255,0);
 }
 
 .position_question_login{

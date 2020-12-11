@@ -89,7 +89,7 @@ const Woman = () => {
             </div>
             <img src={pathAvatar} alt="" className="img_uno_woman" />
 
-            <a href="avatarmen" className="uno_3_woman">
+            <a href="avatars" className="uno_3_woman">
               CAMBIAR FOTO
             </a>
           </div>

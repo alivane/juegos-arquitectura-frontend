@@ -34,7 +34,7 @@ export default function HomeForm() {
                 root: classes.root,
               }}
             >
-              Registrate
+              REG&Iacute;STRATE
             </Button>
           </div>
         </div>

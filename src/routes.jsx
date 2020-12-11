@@ -10,7 +10,7 @@ import Game1 from "./pages/Game1";
 import Game2 from "./pages/Game2";
 import Game3 from "./pages/Game3";
 import Logout from "./pages/Logout";
-import AvatarMen from "./pages/AvatarMen";
+import Avatars from "./pages/Avatars";
 import AvatarWoman from "./pages/AvatarWoman";
 import Logros from "./pages/Logros";
 import OptionLevel from "./pages/OptionLevel";
@@ -67,8 +67,8 @@ export const routes = [
     component: Logout,
   },
   {
-    path: "/avatarmen",
-    component: AvatarMen,
+    path: "/avatars",
+    component: Avatars,
   },
   {
     path: "/avatarwoman",

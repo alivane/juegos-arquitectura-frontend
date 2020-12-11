@@ -86,8 +86,6 @@
        border: none;
    }
 
-   
-
 .form_register__a-register::before{
        content: "";
        position: absolute;
@@ -100,7 +98,6 @@
        left: 0;
        top: 0;
        border-radius: 10px;
-
 }
 .form_register__a-register2{
        position: absolute;
@@ -115,8 +112,6 @@
        text-align: center;
        cursor: pointer;
        border-radius: 5px;
-
-
 }
 .form_register__a-register:focus{
        outline: none;
@@ -141,13 +136,15 @@
 }
 .question_register_2{
         font-size: 20px;
-       color:white;    
+       color:rgb(255,255,0);    
 }
 
 .question_register_2:hover{
+       color: rgb(255,255,0);
+       font-size: 20px;
        text-decoration: none;
-       font-weight: 900;
 }
+
 .question_register_container{
        display: flex;
        justify-content: center;

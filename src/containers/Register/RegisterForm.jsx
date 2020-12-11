@@ -175,9 +175,9 @@ const RegisterForm = () => {
               <span className="form_register__a-register2">Registrar</span>
             </button>
             <div className="question_register_container">
-              <p className="question_register_1">¿Ya estás registrado?</p>
+              <p className="question_register_1">¿YA EST&Aacute;S REGISTRADO?</p>
               <a href="login" className="question_register_2">
-                Ingresar
+                INGRESAR
               </a>
             </div>
           </div>
