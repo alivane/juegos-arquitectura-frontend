@@ -16,7 +16,7 @@ const Shapes = (props) => {
     }
   };
 
-  console.log(data, "data");
+  // console.log(data, "data");
   return (
     <Draggable
       nodeRef={nodeRef}

@@ -20,7 +20,7 @@ const PieceContainer = () => {
     const [shapes, setShapes] = useState([]);
 
   const onClickShape = (e, data) => {
-    console.log(data);
+;
     const price = data[0]['price']* resize;
     setGasto(price)
     setShapes([...shapes, <Shapes data={data} resize={resize} />])
