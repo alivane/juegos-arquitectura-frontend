@@ -5,17 +5,18 @@ import "./Coinstyle.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHardHat } from "@fortawesome/free-solid-svg-icons";
 import LockIcon from "@material-ui/icons/Lock";
-import { token, helmets_all,get_helmets_by_user } from "../../api";
+import { token, helmets_all, helmets_by_user_register, update_user } from "../../api";
 
 const CoinsForm = () => {
-  const [price, setPrice] = useState(500);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+
+  const [price, setPrice] = useState(user['coins']);
   const [compra, setCompra] = useState([]);
   const [compra2, setCompra2] = useState(0);
   const [compra3, setCompra3] = useState(0);
   const [compra4, setCompra4] = useState(0);
   const [helmetsData, setHelmetsData] = useState([]);
   const [casco, setCasco] = useState([]);
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
 
   const token_item = `Bearer ${localStorage.getItem("token", token)}`;
 
@@ -37,14 +38,6 @@ const CoinsForm = () => {
       });
   }, []);
 
-  const updateCoins1 = (params) => {
-    if (price >= 100 ) {
-      setPrice(price - 100);
-    } else {
-      alert("No tienes Coins suficientes para comprar el casco gris");
-    }
-  };
-
   const updateCoins2 = (params) => {
     if (price >= 500) {
       setPrice(price - 500);
@@ -61,10 +54,45 @@ const CoinsForm = () => {
       alert("No tienes Coins suficientes para comprar el casco azul");
     }
   };
-  const updateCoins4 = (params) => {
-    if (price >= 5000) {
-      setPrice(price - 5000);
-      setCompra4(1);
+  const updateCoin = (data) => {
+    if (price >= data['coins']) {
+      const gasto = price - data['coins'];
+      const helmets_by_user = {
+        'id_user': user['id'],
+        'id_helmet': data['id']
+      }
+      helmets_by_user_register(helmets_by_user)
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        } else {
+          let data_helmets = user['helmets']
+          data_helmets.push({
+            'id_user': user['id'],
+            'id_helmet': data['id']
+          })
+          const data_updated = { ...user, 'helmets': data_helmets };
+          localStorage.setItem("user", JSON.stringify(data_updated));
+
+          setPrice(gasto);
+          const userUpdate = {
+              name: user["name"],
+              mail: user["mail"],
+              gender: user["gender"],
+              coins: gasto,
+              id_avatar: user["id_avatar"],
+              id_helmet: user["id_helmet"],
+          };
+
+          const data_user_updated = { ...user, ...userUpdate };
+          localStorage.setItem("user", JSON.stringify(data_user_updated));
+          update_user(token_item, userUpdate, user["id"]).then((response_user) => {
+              if (!response_user.ok) {
+                  throw Error(response_user.statusText);
+              }
+          });
+        }
+      })
     } else {
       alert("No tienes Coins suficientes para comprar el casco blanco");
     }
@@ -78,14 +106,14 @@ const CoinsForm = () => {
             <h1 className="price_coin">${price}</h1>
             <div className="icon_coin">
               <div className="container_icon_coin">
-              {helmetsData.map((data, key) => {
-            const comprar = compra.some(
-              (casco) => casco["id_casco"] === data["id"]
-            );
+                {helmetsData.map((data, key) => {
+                  const comprado = user['helmets'].some(
+                      (casco) => casco["id_helmet"] === data["id"]
+                  );
 
-            if (comprar === false) {
-              return (
-                <div
+                  if (comprado === false) {
+                    return (
+                      <div
                         key={key}
                         className="container_helmet"
                       >
@@ -98,11 +126,11 @@ const CoinsForm = () => {
                         />
                       </div>
 
-              );
-            } else {
-              return (
-                <div
-                 key={key}
+                    );
+                  } else {
+                    return (
+                      <div
+                        key={key}
                         className="container_helmet"
                       >
 
@@ -113,9 +141,9 @@ const CoinsForm = () => {
                         />
                       </div>
 
-              );
-            }
-          })}
+                    );
+                  }
+                })}
               </div>
 
             </div>
@@ -126,25 +154,27 @@ const CoinsForm = () => {
               <h1 className="price_coin_2">VALOR:$5000</h1>
             </div>
             <div className="container_boton_coin">
-            {helmetsData.map((data, key) => {
-            const comprar = compra.some(
-              (casco) => casco["id_casco"] === data["id"]
-            );
+              {
+                helmetsData.map((data, key) => {
+                  const comprado = user['helmets'].some(
+                      (casco) => casco["id_helmet"] === data["id"]
+                  );
 
-            if (comprar === false) {
-              return (
-                <button className="boton_coin" onClick={updateCoins1}>
-                  COMPRAR
-                </button>
+                  if (comprado === false) {
+                    return (
+                      <button key={key} className="boton_coin" onClick={() => updateCoin(data)}>
+                        COMPRAR
+                      </button>
 
-              );
-            } else {
-              return (
-                <h1 className="adquirir">Comprado</h1>
+                    );
+                  } else {
+                    return (
+                      <h1 className="adquirir">Comprado</h1>
 
-              );
-            }
-          })}
+                    );
+                  }
+                })
+              }
               {" "}
             </div>
           </div>

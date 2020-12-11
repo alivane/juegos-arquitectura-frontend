@@ -42,6 +42,10 @@ export default function OptionLevel() {
               // console.log(response)
               throw Error(response.statusText);
             }
+            const data_updated = { ...data_user, 'levels': [data_level] };
+            localStorage.setItem("user", JSON.stringify(data_updated));
+
+            
             alert("Nivel 1 Desbloqueado!!! Empieza a jugar")
             setLevelsUnlock([data_level]);
           })
@@ -52,6 +56,9 @@ export default function OptionLevel() {
             if (!response.ok) {
               throw Error(response.statusText);
             }
+            const data_updated = { ...data_user, 'helmets': [data_helmets] };
+            localStorage.setItem("user", JSON.stringify(data_updated));
+
             alert("Tienes 1 casco gratis!!!");
           })
         }
