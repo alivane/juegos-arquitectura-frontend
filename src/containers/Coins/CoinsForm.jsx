@@ -40,7 +40,6 @@ const CoinsForm = () => {
   const updateCoins1 = (params) => {
     if (price >= 100 ) {
       setPrice(price - 100);
-      setCompra(1);
     } else {
       alert("No tienes Coins suficientes para comprar el casco gris");
     }
