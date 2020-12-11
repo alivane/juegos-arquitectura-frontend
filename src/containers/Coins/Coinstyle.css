@@ -27,40 +27,23 @@
     line-height: 50px;
  
 }
-.casco_cambio_1{
-    color: grey;
-    transform: scale(4);
+.casco{
+    transform: scale(5);
 }
-.casco_cambio_2{
-    color: yellow;
-    transform: scale(4);
+.container_helmet{
+    margin-bottom: 135px;
+}
 
-}
-.casco_cambio_3{
-    color: blue;
-        transform: scale(4);
-
-}
-.casco_cambio_4{
-    color: white;
-        transform: scale(4);
-
-}
 .candado_coin{
     color: transparent;
     stroke:  black;
     position: absolute;
     z-index: 10000;
-}
+    margin-left: -5px;
+    }
 .icon_coin{
     display: grid;
     justify-content: center;
-    align-items: center;
-}
-.container_icon_coin{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 
