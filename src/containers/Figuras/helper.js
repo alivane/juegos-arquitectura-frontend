@@ -51,6 +51,48 @@ const figures = [{
         'height': 100,
         'width': 100,
         'price': 8500
+    },
+    {
+        'img': 'eclipse.png',
+        'height': 100,
+        'width': 100,
+        'price': 8500
+    },
+    {
+        'img': 'rectangulo-flecha.png',
+        'height': 100,
+        'width': 100,
+        'price': 8500
+    },
+    {
+        'img': 'rectangulo-hoja.png',
+        'height': 100,
+        'width': 100,
+        'price': 8500
+    },
+    {
+        'img': 'rectangulo-pieza.png',
+        'height': 100,
+        'width': 100,
+        'price': 8500
+    },
+    {
+        'img': 'triangulo-right.png',
+        'height': 100,
+        'width': 100,
+        'price': 8500
+    },
+    {
+        'img': 'trianguloen2.png',
+        'height': 100,
+        'width': 100,
+        'price': 8500
+    },
+    {
+        'img': 'triangulos.png',
+        'height': 100,
+        'width': 100,
+        'price': 8500
     }
 ]
 
