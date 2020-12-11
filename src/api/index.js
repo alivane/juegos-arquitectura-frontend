@@ -22,7 +22,7 @@ export function register(usuario) {
             mail: usuario.email,
             password: usuario.password,
             gender: usuario.gender,
-            coins: 0,
+            coins: 100,
             id_avatar: usuario.gender === 0 ? 1 : 5,
             id_helmet: 1
         }),
@@ -53,7 +53,7 @@ export function update_user(token, usuario, id) {
 }
 
 export function helmets_by_user_register(data) {
-    return fetch(`${api}/register`, {
+    return fetch(`${api}/helmets_by_user_register`, {
         method: 'POST',
         body: JSON.stringify({
             id_user: data.id_user,
@@ -67,7 +67,7 @@ export function helmets_by_user_register(data) {
 }
 
 export function levels_by_user_register(data) {
-    return fetch(`${api}/register`, {
+    return fetch(`${api}/levels_by_user_register`, {
         method: 'POST',
         body: JSON.stringify({
             id_user: data.id_user,

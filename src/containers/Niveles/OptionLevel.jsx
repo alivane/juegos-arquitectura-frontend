@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import { useHistory } from "react-router-dom";
 import "./OptionLevel.css";
 import LockIcon from "@material-ui/icons/Lock";
-import { token, levels_all } from "../../api";
+import { token, levels_all, helmets_by_user_register, levels_by_user_register } from "../../api";
 
 export default function OptionLevel() {
   // const history = useHistory();
@@ -26,7 +26,35 @@ export default function OptionLevel() {
         localStorage.setItem("gender", data_user["gender"]);
         setGender(data_user["gender"]);
         setLevelsUnlock(data_user["levels"]);
-        console.log(data);
+
+        const data_level = {
+          'id_user': data_user['id'],
+          'id_level': 1
+        }
+        const data_helmets = {
+          'id_user': data_user['id'],
+          'id_helmet': 1
+        }
+
+        if (data_user["levels"].length === 0) {
+          levels_by_user_register(data_level).then((response) => {
+            if (!response.ok) {
+              // console.log(response)
+              throw Error(response.statusText);
+            }
+            alert("Nivel 1 Desbloqueado!!! Empieza a jugar")
+            setLevelsUnlock([data_level]);
+          })
+        }
+
+        if (data_user['helmets'].length === 0) {
+          helmets_by_user_register(data_helmets).then((response) => {
+            if (!response.ok) {
+              throw Error(response.statusText);
+            }
+            alert("Tienes 1 casco gratis!!!");
+          })
+        }
       });
 
     levels_all(token_item)

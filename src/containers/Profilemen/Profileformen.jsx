@@ -25,7 +25,7 @@ const ProfileMen = (props) => {
         return response.text();
       })
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         const avatars = JSON.parse(data);
         for (let i = 0; i < avatars.length; i++) {
           if (avatars[i]["id"] === user["id_avatar"])

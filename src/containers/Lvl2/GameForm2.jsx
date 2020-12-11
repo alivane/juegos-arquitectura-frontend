@@ -48,6 +48,7 @@ const GameForm2 = () => {
           presupuesto={presupuesto}
           gasto={gasto}
           to="/game3"
+          toId={3}
           from="/game2"
         />
         <Terreno2 shapes={shapes} />

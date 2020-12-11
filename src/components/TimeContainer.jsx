@@ -4,7 +4,7 @@ import Timer from './timer';
 
 const TimeContainer = (props) => {
   const {
-    presupuesto, gasto, to, from
+    presupuesto, gasto, to, from, toId
   } = props;
   const [state, setState] = useState({
     abierto: false,
@@ -73,6 +73,7 @@ const TimeContainer = (props) => {
           title={title}
           ranking={ranking}
           to={to}
+          toId={toId}
           from={from}
         />
       </div>

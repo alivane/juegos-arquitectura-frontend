@@ -9,7 +9,7 @@ export default function Nivel1() {
   const [shapes, setShapes] = useState([]);
 
   const onClickShape = (e, data) => {
-    console.log(data);
+    // console.log(data);
     setShapes([...shapes, <Shapes data={data} />]);
   };
 
